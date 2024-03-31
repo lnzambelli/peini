@@ -1,0 +1,17 @@
+/* :root - Selector especial utilizado para definir variables personalizadas de CSS que se pueden reutilizar en todo el documento. */
+:root {
+    
+}
+
+/* Selector de etiqueta para body donde aplica color de fondo. */
+body {
+   
+}
+
+
+/* Selector Universal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
