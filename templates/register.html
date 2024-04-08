@@ -98,7 +98,7 @@
                 <br>
 
                 <div class="form-control">
-                    <!-- En este código, cada vez que se hace clic en una de las checkboxes, se llama a la función limitarSeleccion(this), donde this hace referencia a la checkbox que fue seleccionada. Esta función desactiva todas las otras checkboxes y deja solo la checkbox seleccionada. De esta manera, solo una opción puede ser seleccionada a la vez.  -->
+                    <!-- En este código, cada vez que se hace clic en una de las checkboxes, se llama a la función limitarSeleccion(this), donde this hace referencia a la checkbox que fue seleccionada. Esta función desactiva todas las otras checkboxes y deja solo la seleccionada. De esta manera, solo una opción puede ser seleccionada a la vez.  -->
                     <label for="">Sala: </label>
                     <input type="checkbox" name="Nivel" value="1" onclick="limitarSeleccion(this)"> A
                     <input type="checkbox" name="Nivel" value="2" onclick="limitarSeleccion(this)"> B
@@ -111,10 +111,10 @@
                 <!-- Perfil-->
                 <div class="form-control">
                     <label for="">Perfil de Usuario: </label>
-                    <select name="country" id="country" class="form-select">
+                    <select name="perfil" id="perfil" class="form-select">
                         <option value="">Alumna/o</option>
                         <option value="">Maestra/o</option>
-                        <option value="AR">Admin</option>
+                        <option value="">Admin</option>
 
                     </select>
                 </div>
