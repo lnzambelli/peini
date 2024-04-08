@@ -1,11 +1,11 @@
 /* :root - Selector especial utilizado para definir variables personalizadas de CSS que se pueden reutilizar en todo el documento. */
 :root {
-    
+    --bg-color: aqua;
 }
 
 /* Selector de etiqueta para body donde aplica color de fondo. */
 body {
-   
+   background-color: var(--bg-color);
 }
 
 
