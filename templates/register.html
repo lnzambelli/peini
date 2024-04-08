@@ -137,7 +137,7 @@
     <script src="../static/js/validaciones.js"></script>
     <script>
 
-        // Asignar eventos de entrada a los campos para validar en tiempo real
+        // Asignar eventos de entrada a los campos para validar en tiempo real, Toma los campos en el Input del usuarios,el error definido y el Pattern para hacer la validación.
         document.getElementById("firstname").addEventListener("input", function () {
             validarCampo("firstname", "error-firstname", /^[a-zA-Z\s]+$/);
         });

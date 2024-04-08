@@ -4,3 +4,4 @@ Se agregaron las etiquetas al body, se suma carpeta img y se sube el favicon (Se
             - Registo version 1. 
             - Se suma carpeta de java script
             - Se ponen validaciónes y mensajes de error en Apellido, Nombre y Mail. Se pueden sumar mas.
+            - Se agregan comentarios.
