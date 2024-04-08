@@ -22,134 +22,139 @@
         <!--Fromulario -->
         <section class="">
             <fieldset>
-                <legend><strong>Registro de Usuarios</strong></legend>
+                <legend><strong>FORMULARIO DE REGISTRO</strong></legend>
 
                 <form action="#" method="get" id="form-register">
-
                     <!-- Nombre -->
                     <div class="form-control">
                         <label for="firstname">Nombre:</label>
-                        <input type="text" name="firstname" id="firstname" pattern="[a-zA-Z0-9]+"
-                            title="No se pueden utilizar caracteres especiales. Solo letras y números son permitidos."
-                            placeholder="Escriba su Nombre" size="20" maxlength="20" required>
+                        <input type="text" name="firstname" id="firstname"
+                            title="No se pueden utilizar caracteres especiales. Solo letras son permitidas."
+                            placeholder="Escriba su Nombre" required>
+                        <div class="error" id="error-firstname">Por favor, ingrese un nombre válido.</div>
                     </div>
-                    <div class="error" id="error-firstname"></div>
 
                     <!-- Apellido -->
                     <div class="form-control">
-                        <label for="">Apellido</label>
-                        <input type="text" name="lastname" id="lastname" pattern="[a-zA-Z0-9]+"
-                            title="No se pueden utilizar caracteres especiales. Solo letras y números son permitidos."
-                            placeholder="Escriba su Aapellido" required>
+                        <label for="lastname">Apellido:</label>
+                        <input type="text" name="lastname" id="lastname"
+                            title="No se pueden utilizar caracteres especiales. Solo letras son permitidas."
+                            placeholder="Escriba su Apellido" required>
+                        <div class="error" id="error-lastname">Por favor, ingrese un apellido válido.</div>
                     </div>
-                    <div class="error" id="error-lastname"></div>
 
-                    <!-- Direccion -->
+                    <!-- Dirección -->
                     <div class="form-control">
-                        <label for="">Dirección:</label>
-                        <input type="text" name="direccion" id="direccion" pattern="[a-zA-Z0-9]+"
-                            title="No se pueden utilizar caracteres especiales. Solo letras y números son permitidos."
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" name="direccion" id="direccion"
+                            title="No se pueden utilizar caracteres especiales. Solo letras, números y espacios en blanco son permitidos."
                             placeholder="Escriba su Dirección" required>
+                        <div class="error" id="error-direccion">Por favor, ingrese una dirección válida.</div>
                     </div>
-                    <div class="error" id="error-direccion"></div>
+                </form>
 
-                    <!-- Cuidad -->
-                    <div class="form-control">
-                        <label for="">Ciudad:</label>
-                        <input type="text" name="ciudad" id="ciudad">
-                    </div>
-                    <div class="error" id="error-ciudad"></div>
+                <!-- Cuidad -->
+                <div class="form-control">
+                    <label for="">Ciudad:</label>
+                    <input type="text" name="ciudad" id="ciudad">
+                </div>
+                <div class="error" id="error-ciudad"></div>
 
-                    <!-- Codigo Postal -->
-                    <div class="form-control">
-                        <label for="">Codigo Postal:</label>
-                        <input type="text" name="codigopostal" id="codigopostal" required>
-                    </div>
-                    <div class="error" id="error-codigopostal"></div>
+                <!-- Codigo Postal -->
+                <div class="form-control">
+                    <label for="">Codigo Postal:</label>
+                    <input type="text" name="codigopostal" id="codigopostal" required>
+                </div>
+                <div class="error" id="error-codigopostal"></div>
 
-                    <!-- Fecha de nacimiento -->
-                    <div class="form-control">
-                        <label for="">Fecha de Nacimiento;</label>
-                        <input type="date" name="bithday" id="birthday" required>
-                    </div>
+                <!-- Fecha de nacimiento -->
+                <div class="form-control">
+                    <label for="">Fecha de Nacimiento;</label>
+                    <input type="date" name="bithday" id="birthday" required>
+                </div>
 
-                    <!-- mail -->
-                    <div class="form-control">
-                        <label for="">Mail:</label>
-                        <input type="email" name="email" id="email" required>
-                    </div>
-                    <div class="error" id="error-mail"></div>
+                <!-- Mail -->
+                <div class="form-control">
+                    <label for="email">Mail:</label>
+                    <input type="email" name="email" id="email" required>
+                    <div class="error" id="error-email">Por favor, ingrese un correo electrónico válido.</div>
+                </div>
 
-                    <!-- password -->
-                    <div class="form-control">
-                        <label for="">Contraseña:</label>
-                        <input type="password" name="password" id="password" required>
-                    </div>
-                    <div class="error" id="error-password"></div>
-                    <br>
+                <!-- password -->
+                <div class="form-control">
+                    <label for="">Contraseña:</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <div class="error" id="error-password"></div>
+                <br>
 
-                    <!-- Genero -->
-                    <div class="form-control">
-                        <label for="">Género: </label>
-                        <input type="radio" name="genero" value="1" required>Masculino
-                        <input type="radio" name="genero" value="2" required>Femenino
-                        <input type="radio" name="genero" value="3" required>No Binario
-                    </div>
-                    <br>
+                <!-- Genero -->
+                <div class="form-control">
+                    <label for="">Género: </label>
+                    <input type="radio" name="genero" value="1" required>Masculino
+                    <input type="radio" name="genero" value="2" required>Femenino
+                    <input type="radio" name="genero" value="3" required>No Binario
+                </div>
+                <br>
 
-                    <div class="form-control">
-                        <!-- En este código, cada vez que se hace clic en una de las checkboxes, se llama a la función limitarSeleccion(this), donde this hace referencia a la checkbox que fue seleccionada. Esta función desactiva todas las otras checkboxes y deja solo la checkbox seleccionada. De esta manera, solo una opción puede ser seleccionada a la vez.  -->
-                        <label for="">Sala: </label>
-                        <input type="checkbox" name="Nivel" value="1" onclick="limitarSeleccion(this)"> A
-                        <input type="checkbox" name="Nivel" value="2" onclick="limitarSeleccion(this)"> B
-                        <input type="checkbox" name="Nivel" value="3" onclick="limitarSeleccion(this)"> C
-                        <input type="checkbox" name="Nivel" value="4" onclick="limitarSeleccion(this)"> D
-                    </div>
+                <div class="form-control">
+                    <!-- En este código, cada vez que se hace clic en una de las checkboxes, se llama a la función limitarSeleccion(this), donde this hace referencia a la checkbox que fue seleccionada. Esta función desactiva todas las otras checkboxes y deja solo la checkbox seleccionada. De esta manera, solo una opción puede ser seleccionada a la vez.  -->
+                    <label for="">Sala: </label>
+                    <input type="checkbox" name="Nivel" value="1" onclick="limitarSeleccion(this)"> A
+                    <input type="checkbox" name="Nivel" value="2" onclick="limitarSeleccion(this)"> B
+                    <input type="checkbox" name="Nivel" value="3" onclick="limitarSeleccion(this)"> C
+                    <input type="checkbox" name="Nivel" value="4" onclick="limitarSeleccion(this)"> D
+                </div>
 
-                    <script>
-                        function limitarSeleccion(checkbox) {
-                            // El elegir una opcion en el checkbox la funcion desmarcar el resto. Aca se obtiene todos los checkbox con el nombre nivel. Y las almacena en la variablre "checkboxes"
-                            var checkboxes = document.getElementsByName("Nivel");
+                <br><br>
 
-                            // Dentro del bucle, checkboxes[i].checked = false; desmarca cada checkbox, lo que garantiza que ninguna esté seleccionada inicialmente.
-                            for (var i = 0; i < checkboxes.length; i++) {
-                                // Después del bucle, checkbox.checked = true; marca solo la checkbox en la que se hizo clic, lo que asegura que solo una opción esté seleccionada a la vez.
-                                checkboxes[i].checked = false;
-                            }
-                            // Marcar solo la checkbox que fue seleccionada
-                            checkbox.checked = true;
-                        }
-                    </script>
+                <!-- Perfil-->
+                <div class="form-control">
+                    <label for="">Perfil de Usuario: </label>
+                    <select name="country" id="country" class="form-select">
+                        <option value="">Alumna/o</option>
+                        <option value="">Maestra/o</option>
+                        <option value="AR">Admin</option>
 
-                    <br><br>
-
-                    <!-- Perfil-->
-                    <div class="form-control">
-                        <label for="">Perfil de Usuario: </label>
-                        <select name="country" id="country" class="form-select">
-                            <option value="">Alumna/o</option>
-                            <option value="">Maestra/o</option>
-                            <option value="AR">Admin</option>
-
-                        </select>
-                    </div>
-                    <br>
+                    </select>
+                </div>
+                <br>
 
 
-                    <!-- Enviar y Borrar Datos-->
-                    <div>
-                        <button type="submit">Alta Usuario</button>
-                        <button type="submit">Modificación Usuario</button>
-                        <button type="submit">Baja Usuario</button>
-                        <button type="reset">Reset Datos</button>
-                    </div>
-                    <br><br>
+                <!-- Enviar y Borrar Datos-->
+                <div>
+                    <button type="submit">Alta Usuario</button>
+                    <button type="submit">Modificación Usuario</button>
+                    <button type="submit">Baja Usuario</button>
+                    <button type="reset">Reset Datos</button>
+                </div>
+                <br><br>
 
                 </form>
             </fieldset>
         </section>
-
     </main>
+    <script src="../static/js/validaciones.js"></script>
+    <script>
+
+        // Asignar eventos de entrada a los campos para validar en tiempo real
+        document.getElementById("firstname").addEventListener("input", function () {
+            validarCampo("firstname", "error-firstname", /^[a-zA-Z\s]+$/);
+        });
+
+        document.getElementById("lastname").addEventListener("input", function () {
+            validarCampo("lastname", "error-lastname", /^[a-zA-Z\s]+$/);
+        });
+
+        document.getElementById("direccion").addEventListener("input", function () {
+            validarCampo("direccion", "error-direccion", /^[a-zA-Z0-9\s]+$/);
+        });
+
+        document.getElementById("email").addEventListener("input", function () {
+            validarCampo("email", "error-email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+        });
+
+    </script>
 
     <footer></footer>
 
