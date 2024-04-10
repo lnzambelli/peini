@@ -1,12 +1,17 @@
 /* :root - Selector especial utilizado para definir variables personalizadas de CSS que se pueden reutilizar en todo el documento. */
 :root {
-    --color-primario: #007bff; /* Azul primario */
-    --color-secundario: #6c757d; /* Gris secundario */
-    --color-error: #dc3545; /* Rojo error */
-    --color-fondo: #f8f9fa; /* Color de fondo */
-    --color-texto: #212529; /* Color de texto */
+    --color-primario: #007bff;
+    /* Azul primario */
+    --color-secundario: #6c757d;
+    /* Gris secundario */
+    --color-error: #dc3545;
+    /* Rojo error */
+    --color-fondo: #f8f9fa;
+    /* Color de fondo */
+    --color-texto: #212529;
+    /* Color de texto */
     --bg-color: aqua;
-  }
+}
 
 /* Selector de etiqueta para body donde aplica color de fondo. */
 body {
@@ -21,7 +26,7 @@ body {
     box-sizing: border-box;
 }
 
-.error{
+.error {
     display: none;
     color: red;
 }
@@ -36,34 +41,34 @@ body {
     text-align: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
-  }
+}
 
 /* Botón primario */
 .btn-primario {
     background-color: var(--color-primario);
     color: #ffffff;
 }
-  
+
 .btn-primario:hover {
     background-color: #0056b3;
 }
-  
+
 /* Botón secundario */
 .btn-secundario {
     background-color: var(--color-secundario);
     color: #ffffff;
 }
-  
+
 .btn-secundario:hover {
     background-color: #5a6268;
 }
-  
+
 /* Botón de error */
 .btn-error {
     background-color: var(--color-error);
     color: #ffffff;
 }
-  
+
 .btn-error:hover {
     background-color: #c82333;
 }
@@ -75,8 +80,8 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
+}
+
 /* Estilos de inputs */
 .input {
     display: block;
@@ -87,7 +92,7 @@ body {
     font-size: 16px;
     margin-bottom: 15px;
 }
-  
+
 .input:focus {
     border-color: var(--color-primario);
     outline: none;
@@ -97,7 +102,7 @@ body {
     color: var(--color-primario);
     text-decoration: none;
 }
-  
+
 .link:hover {
     text-decoration: underline;
 }
@@ -106,7 +111,7 @@ body {
     color: var(--color-texto);
     text-decoration: none;
 }
-  
+
 .link-nav:hover {
     color: var(--color-fondo);
     text-decoration: none;
@@ -118,22 +123,36 @@ body {
     color: #ffffff;
     padding: 15px 0;
 }
-  
+
 .navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-  
+
 .navbar ul li {
     display: inline;
     margin-right: 20px;
 }
-  
+
 /* Estilos para footer */
 .footer {
     background-color: var(--color-primario);
     color: #ffffff;
     padding: 20px 0;
     text-align: center;
+}
+
+/* Estilo para ID DNI y telefono Ocultar las flechas solo en el campo de entrada */
+
+ #dni::-webkit-inner-spin-button,
+ #dni::-webkit-outer-spin-button,
+ #telefono::-webkit-inner-spin-button,
+ #telefono::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+ }
+#dni, #telefono {
+    -moz-appearance: textfield;
+    /* Firefox */
 }

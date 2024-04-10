@@ -43,6 +43,27 @@
                         <div class="error" id="error-lastname">Por favor, ingrese un apellido válido.</div>
                     </div>
 
+                     <!-- DNI -->
+
+                    <div class="form-control">
+                        <label for="dni">DNI:</label>
+                        <input type="number" name="dni" id="dni"
+                            title="No se pueden utilizar caracteres especiales. Solo números."
+                            placeholder="Escriba su Documento" required
+                            min="100000" max="9999999999" inputmode="numeric">
+                        <div class="error" id="error-dni">Por favor, ingrese un Documento válido.</div>
+                    </div>
+                    
+
+                    <!-- Telefono -->
+                    <div class="form-control">
+                        <label for="telefono">Telefono:</label>
+                        <input type="number" name="telefono" id="telefono"
+                            title="No se pueden utilizar caracteres especiales. Solo Numeros."
+                            placeholder="Escriba su Telefono" required  min="100000" max="9999999999" inputmode="numeric">
+                        <div class="error" id="error-telefono">Por favor, ingrese un Telefono válido.</div>
+                    </div>
+
                     <!-- Dirección -->
                     <div class="form-control">
                         <label for="direccion">Dirección:</label>
@@ -103,6 +124,13 @@
                         <input type="checkbox" name="Nivel" value="2" onclick="limitarSeleccion(this)"> B
                         <input type="checkbox" name="Nivel" value="3" onclick="limitarSeleccion(this)"> C
                         <input type="checkbox" name="Nivel" value="4" onclick="limitarSeleccion(this)"> D
+                    </div>
+
+                      <!-- Turno -->
+                      <div class="form-control">
+                        <label for="">Turno: </label>
+                        <input type="radio" name="genero" value="1" required>Mañana
+                        <input type="radio" name="genero" value="2" required>Tarde
                     </div>
 
                     <br><br>

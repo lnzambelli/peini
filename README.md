@@ -5,3 +5,8 @@ Se agregaron las etiquetas al body, se suma carpeta img y se sube el favicon (Se
             - Se suma carpeta de java script
             - Se ponen validaciónes y mensajes de error en Apellido, Nombre y Mail. Se pueden sumar mas.
             - Se agregan comentarios.
+10/04/204
+
+            - Se suma Telefono, DNI y Turno
+            - Control de cantidad de numeros.
+            - Style se quitan las flechas del input
