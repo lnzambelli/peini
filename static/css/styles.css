@@ -152,7 +152,9 @@ body {
      -webkit-appearance: none;
      margin: 0;
  }
-#dni, #telefono {
-    -moz-appearance: textfield;
-    /* Firefox */
-}
+    /* Parametro para ocultarlo en Firefox */
+ #dni[type="number"],
+ #telefono[type="number"] {
+     -moz-appearance: textfield;
+     appearance: textfield;
+ }

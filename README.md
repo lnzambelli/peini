@@ -9,4 +9,5 @@ Se agregaron las etiquetas al body, se suma carpeta img y se sube el favicon (Se
 
             - Se suma Telefono, DNI y Turno
             - Control de cantidad de numeros.
-            - Style se quitan las flechas del input
+            - Styles se quitan las flechas del input
+            . Se agrega styles para firefox.
