@@ -6,10 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS Externo -->
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
 
     <!-- Favicon -->
     <link rel="icon" href="../static/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
     <title>Peini - Biblioteca</title>
     
@@ -19,7 +23,124 @@
 
     <header></header>
 
-    <main></main>
+    <main>
+        <img src="https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg" alt="" style="max-height: 300px; width: 100%; object-fit: cover;">
+
+        <h3 class="tituloSection">Lecturas</h3>
+       <section class="containerSection">
+            <div class="book" >
+                <p style="padding-left: 36px; padding-right: 8px;">
+                    Conoce a los animales de la Granja, diviértete con las RIMAS . 
+                    ¡Dibuja en la colorida pizarra mágica, apágala y podrás dibujar otra vez!<br>
+                    <button style="float: right;" class="btn btn-primario">Leer </button>
+                </p>
+                
+                <div class="cover" style="background: center / cover url('./../static/img/libro-granja.webp');">
+                    
+                </div>
+           </div>
+           <div class="book" >
+                <p style="padding-left: 36px; padding-right: 8px;">
+                    Conoce a los animales de la Selva, 
+                    diviértete con las RIMAS y sigue los pasos para dibujar. 
+                    ¡Dibuja en la colorida pizarra mágica, apágala y podrás dibujar otra vez!!<br>
+                    <button style="float: right;" class="btn btn-primario">Leer</button>
+                </p>
+                <div class="cover" style="background: center / cover url('./../static/img/libro-selva.png');">
+                    
+                </div>
+            </div>
+            <div class="book" >
+                <p style="padding-left: 36px; padding-right: 8px;">
+                    Conoce a las pequeñas criaturas que viven en el jardín, 
+                    diviértete con las RIMAS y sigue los pasos para dibujar a los insectos. 
+                    ¡Dibuja en la colorida pizarra mágica, apágala y podrás dibujar otra vez!<br>
+                    <button style="float: right;" class="btn btn-primario">Leer</button>
+                </p>
+                <div class="cover" style="background: center / cover url('./../static/img/libro-jardin.png');">
+                    
+                </div>
+            </div>
+       </section>
+       
+       <h3 class="tituloSection">Audio Libros</h3>
+       <section class="containerSection">
+            <div class="card" style="width: 500px; height: 200px; padding: 0px; display: flex;">
+                <img src="./../static/img/audiolibro-gato.jpg" alt="" srcset="" style="width: 40%; height: 100%; object-fit: cover;">
+                <div style="width: 60%; position: relative;">
+                    <h3 style="text-align: center; padding-top: 8px;">El gato con botas</h3>
+                    <p style="padding: 8px; font-size: 14px;">
+                        Cuenta la historia de un gato que, a base de astucia y engaños, 
+                        consigue la fortuna y la mano de una princesa para su amo, 
+                        totalmente pobre. El libro manuscrito de 1695 está dedicado a Mademoiselle, 
+                        sobrina de Luis XIV.
+                    </p>
+                    <audio controls controlslist="nodownload" style="background: #f1f3f4;border-radius: 8px; backdrop-filter: blur(1px); opacity: 0.9; position: absolute; bottom: 0px;">
+                        <source src="./../static/media/F_El_gato_con_botas.mp3" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="card" style="width: 500px; height: 200px; padding: 0px; display: flex;">
+                <img src="./../static/img/audiolibro-pinocho.webp" alt="" srcset="" style="width: 40%; height: 100%; object-fit: cover;">
+                <div style="width: 60%; position: relative;">
+                    <h3 style="text-align: center; padding-top: 8px;">Pinocho</h3>
+                    <p style="padding: 8px; font-size: 14px;">
+                        El libro relata la historia de Pinocho, 
+                        un muñeco de madera que va atravesando diferentes pruebas en las 
+                        que tiene que decidir entre el bien y el mal, 
+                        y que finalmente se convierte en un niño de carne y hueso.
+                    </p>
+                    <audio controls controlslist="nodownload" style="background: #f1f3f4;border-radius: 8px; backdrop-filter: blur(1px); opacity: 0.9; position: absolute; bottom: 0px;">
+                        <source src="./../static/media/F_Pinocho.mp3" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="card" style="width: 500px; height: 200px; padding: 0px; display: flex;">
+                <img src="./../static/img/audiolibro-cerditos.jpg" alt="" srcset="" style="width: 40%; height: 100%; object-fit: cover;">
+                <div style="width: 60%; position: relative;">
+                    <h3 style="text-align: center; padding-top: 8px;">Los 3 cerditos</h3>
+                    <p style="padding: 8px; font-size: 14px;">
+                        En el corazón del bosque vivían los tres cerditos, que eran hermanos.
+                        Resulta que estos cerditos siempre eran perseguidos por un lobo que se los quería comer.
+                        Para escapar de este lobo, los cerditos decidieron hacerse una casa.
+                    </p>
+                    <audio controls controlslist="nodownload" style="background: #f1f3f4;border-radius: 8px; backdrop-filter: blur(1px); opacity: 0.9; position: absolute; bottom: 0px;">
+                        <source src="./../static/media/F_Tres_cerditos.mp3" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+
+            <div class="card" style="width: 500px; height: 200px; padding: 0px; display: flex;">
+                <img src="./../static/img/audiolibro-patito.jpg" alt="" srcset="" style="width: 40%; height: 100%; object-fit: cover;">
+                <div style="width: 60%; position: relative;">
+                    <h3 style="text-align: center; padding-top: 8px;">El patito feo</h3>
+                    <p style="padding: 8px;  font-size: 14px;">
+                        Esta es la historia de un cisne que nace en un corral de patos. 
+                        Ridiculizado por ser diferente, huye, pero donde quiera que va, 
+                        tropieza con la misma incomprensión, hasta que al fin crece 
+                        y se convierte en la más hermosa y admirada criatura.
+                    </p>
+                    <audio controls controlslist="nodownload" style="background: #f1f3f4;border-radius: 8px; backdrop-filter: blur(1px); opacity: 0.9; position: absolute; bottom: 0px;">
+                        <source src="./../static/media/Patito_feo.mp3" type="audio/ogg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+       </section>
+
+       <h3 class="tituloSection">Video Cuentos</h3>
+       <section class="containerSection">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/CfxlHHU0Yqk?si=pHJxAsQHzopg6ova" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/js1lKmt-Mag?si=p3mxK9Umg4CxVRh5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/erImv5PJqnA?si=2X8L5L1WfRpO8w4V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UbF8bRd2VXU?si=KEK5LFVPZ1hdXsBB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+    </main>
 
     <footer></footer>
 
