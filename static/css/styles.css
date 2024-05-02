@@ -6,6 +6,8 @@
     /* Gris secundario */
     --color-error: #dc3545;
     /* Rojo error */
+    --color-correcto: #94be1f;
+    /* Rojo error */
     --color-fondo: #f8f9fa;
     /* Color de fondo */
     --color-texto: #212529;
@@ -27,9 +29,10 @@ body {
     font-family: "Rubik", sans-serif;
 }
 
+
 .error {
     display: none;
-    color: red;
+    color: var(--color-error);
 }
 
 /* Estilos de botones */
@@ -118,6 +121,106 @@ body {
     text-decoration: none;
 }
 
+/*ESTILOS PAGE LIBRARY*/
+
+.tituloSection {
+    text-align: center;
+    font-size: 28px;
+    color: var(--color-primario);
+    margin: 16px 0px;
+}
+
+.containerSection {
+    padding: 16px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 24px;
+}
+
+.book {
+    position: relative;
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.cover {
+    top: 0;
+    position: absolute;
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform-origin: 0;
+    -ms-transform-origin: 0;
+    transform-origin: 0;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.book:hover .cover {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-transform: rotatey(-80deg);
+    -ms-transform: rotatey(-80deg);
+    transform: rotatey(-80deg);
+}
+
+.card-audio {
+    position: relative;
+    border-radius: 10px;
+    width: 220px;
+    height: 300px;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 1px 1px 12px #000;
+    box-shadow: 1px 1px 12px #000;
+    -webkit-transform: preserve-3d;
+    -ms-transform: preserve-3d;
+    transform: preserve-3d;
+    -webkit-perspective: 2000px;
+    perspective: 2000px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: end;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
 /* Estilos para navbar */
 .navbar {
     background-color: var(--color-primario);
@@ -144,117 +247,179 @@ body {
     text-align: center;
 }
 
+/* Estilo Formulario de Resgistro y ABM de Usuario */
+
+.formulario {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+    max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+    
+}
+
+.formulario-registro {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+    max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
+}
+
+.form-formulario-registro {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.form-formulario-registro label {
+	width: 100%;
+}
+
+
+/* Tamaño de icono */
+.icono-svg {
+	width: 1em;
+	/* Tamaño relativo a la fuente */
+	height: 1em;
+	/* Tamaño relativo a la fuente */
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	/* Propertie para que quede arriba de otrso elementos */
+	font-size: 16px;
+	opacity: 0;
+}
+
+.form-label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.formulario-input {
+	position: relative;
+}
+
+.form-control {
+	width: 100%;
+	background-color: #fff;
+	border: 5px solid transparent;
+	border-radius: 5px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 40px 0 10px;
+	transition: .3s ease all;
+}
+
+.form-control:focus {
+	border: 5px solid lightskyblue;
+	outline: none;
+	box-shadow: 3px 0px 30px gray;
+}
+
+/* Validación iconos */
+
+.form-formulario-correcto .form-validacion-estado {
+	color: var(--color-correcto);
+    opacity: 1;
+}
+
+.form-formulario-correcto .form-control {
+	border: 5px solid var(--color-correcto);
+}
+
+.form-formulario-error .form-label {
+	color: var(--color-error);
+
+}
+
+.form-formulario-error .form-validacion-estado {
+	color: var(--color-error);
+	opacity: 1;
+}
+
+.form-formulario-error .form-control {
+	border: 5px solid var(--color-error);
+}
+
+/* Fin Validación iconos */
+
+.error-activo {
+	display: block;
+	text-align: justify;
+	padding: 5px;
+}
+
+
+.form-btn-envia {
+	grid-column: span 2;
+	text-align: center;
+}
+
+
 /* Estilo para ID DNI y telefono Ocultar las flechas solo en el campo de entrada */
 
- #dni::-webkit-inner-spin-button,
- #dni::-webkit-outer-spin-button,
- #telefono::-webkit-inner-spin-button,
- #telefono::-webkit-outer-spin-button {
-     -webkit-appearance: none;
-     margin: 0;
- }
-    /* Parametro para ocultarlo en Firefox */
- #dni[type="number"],
- #telefono[type="number"] {
-     -moz-appearance: textfield;
-     appearance: textfield;
- }
-
-  /*ESTILOS PAGE LIBRARY*/
-
-.tituloSection{
-    text-align: center;
-    font-size: 28px;
-    color: var(--color-primario);
-    margin: 16px 0px;
+#usuario-dni::-webkit-inner-spin-button,
+#alumno-dni::-webkit-inner-spin-button,
+#responsable-dni::-webkit-inner-spin-button,
+#responsable2-dni::-webkit-inner-spin-button,
+#responsable-telefono::-webkit-inner-spin-button,
+#responsable2-telefono::-webkit-inner-spin-button,
+#usuario-dni::-webkit-outer-spin-button,
+#alumno-dni::-webkit-outer-spin-button,
+#responsable-dni::-webkit-outer-spin-button,
+#responsable2-dni::-webkit-outer-spin-button,
+#responsable-telefono::-webkit-outer-spin-button,
+#responsable2-telefono::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
-.containerSection{
-    padding: 16px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    row-gap: 24px;
+#usuario-dni,
+#alumno-dni,
+#responsable-dni,
+#responsable2-dni,
+#responsable-telefono,
+#responsable2-telefono {
+    appearance: textfield;
+    -moz-appearance: textfield;
+    /* Para Firefox */
+}
+/* Fin oculto flechas */
+
+/* Marge para el boton de segundo responsable. */
+#mostrarFormulario {
+	margin-top: 15px;
+    margin-bottom: 15px;
 }
 
- .book {
-    position: relative;
-    border-radius: 10px;
-    width: 220px;
-    height: 300px;
-    background-color: whitesmoke;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  
-  .cover {
-    top: 0;
-    position: absolute;
-    background-color: lightgray;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform-origin: 0;
-    -ms-transform-origin: 0;
-    transform-origin: 0;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  
-  .book:hover .cover {
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s;
-    -webkit-transform: rotatey(-80deg);
-    -ms-transform: rotatey(-80deg);
-    transform: rotatey(-80deg);
-  }
+/* Media query */
 
-  .card-audio {
-    position: relative;
-    border-radius: 10px;
-    width: 220px;
-    height: 300px;
-    background-color: whitesmoke;
-    -webkit-box-shadow: 1px 1px 12px #000;
-    box-shadow: 1px 1px 12px #000;
-    -webkit-transform: preserve-3d;
-    -ms-transform: preserve-3d;
-    transform: preserve-3d;
-    -webkit-perspective: 2000px;
-    perspective: 2000px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: end;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
+@media screen and (max-width: 800px) {
+
+	.formulario,
+	.formulario-registro,
+	.form-formulario-registro {
+		grid-template-columns: 1fr;
+	}
+
+
+	.form-btn-envia {
+		grid-column: 1;
+		text-align: center;
+	}
+
+	.btn {
+		width: 100%;
+		margin-top: 10px;
+		/* Ajusta este valor según sea necesario */
+	}
+
+}

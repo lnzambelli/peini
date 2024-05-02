@@ -10,6 +10,12 @@
     <!-- Favicon -->
     <link rel="icon" href="../static/img/favicon.ico">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+    <title>Peini - Registro</title>
+
     <!-- Inconos -->
     <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
 
@@ -190,7 +196,7 @@
                             <div class="formulario-input">
                                 <input type="number" class="form-control" name="responsable-dni" id="responsable-dni"
                                     placeholder="Escriba su Documento" inputmode="numeric"">
-                  <!-- <img src=" ./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                <!-- <img src=" ./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
                                     class="icono-svg formulario__validacion-estado"> -->
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
@@ -276,7 +282,7 @@
                     <!-- Muestro segundo responsable -->
 
                     <!-- Boton para ver los datos del segundo responsable -->
-                    <button type="button" id="mostrarFormulario" class="btn btn-secondary">Agregar otro
+                    <button type="button" id="mostrarFormulario" class="btn btn-secundario">Agregar otro
                         Responsable</button>
 
 
@@ -415,17 +421,17 @@
 
                 <!-- Enviar y Borrar Datos-->
                 <div class="form-btn-envia">
-                    <button type="submit" class="form-btn btn">Alta Usuario</button>
-                    <button type="submit" class="form-btn btn">Modificación Usuario</button>
-                    <button type="submit" class="form-btn btn">Baja Usuario</button>
-                    <button type="reset" class="form-btn btn">Reset Datos</button>
+                    <button type="submit" class="btn btn-primario">Alta Usuario</button>
+                    <button type="submit" class="btn btn-primario">Modificación Usuario</button>
+                    <button type="submit" class="btn btn-primario">Baja Usuario</button>
+                    <button type="reset" class="btn btn-secundario">Reset Datos</button>
                 </div>
 
             </fieldset>
         </form>
     </main>
 
-    <script src="./statics/js/validaciones_nuevo_registro.js"></script>
+    <script src="../static/js/validaciones.js"></script>
 
     <footer></footer>
 </body>

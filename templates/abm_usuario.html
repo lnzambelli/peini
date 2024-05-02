@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Inconos -->
+    <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
+
+    <title>Peini - ABM_USUARIO</title>
+
+</head>
+
+<body>
+
+    <header></header>
+
+
+    <main>
+
+        <form action="">
+            <fieldset class="formulario" id="formulario">
+                <legend>AMB DE USUARIOS</legend>
+
+                <!-- Nombre -->
+                <div class="form-formulario" id="form-nombre">
+                    <label for="usuario-firstname" class="form-label">Nombre:</label>
+                    <div class="formulario-input">
+                        <input type="text" class="form-control" name="usuario-firstname" id="usuario-firstname"
+                            placeholder="Escriba su Nombre">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+
+                    <div class="error" id="error-usuario-firstname">El nombre se completa con letras y espacios,
+                        pueden llevar acentos.</div>
+                </div>
+
+                <!-- Apellido -->
+                <div class="form-formulario" id="form-apellido">
+                    <label for="usuario-lastname" class="form-label">Apellido:</label>
+                    <div class="formulario-input">
+                        <input type="text" class="form-control" name="usuario-lastname" id="usuario-lastname"
+                            placeholder="Escriba su Apellido">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="error" id="error-usuario-lastname">El Apellido se completa con letras y
+                        espacios,
+                        pueden llevar acentos.</div>
+                </div>
+
+                <!-- DNI -->
+                <div class="form-formulario" id="form-dni">
+                    <label for="usuario-dni" class="form-label">DNI:</label>
+                    <div class="formulario-input">
+                        <input type="number" class="form-control" name="usuario-dni" id="usuario-dni"
+                            placeholder="Escriba su Documento" pattern="[0-9]*">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="error" id="error-usuario-dni">Por favor, ingrese un Documento válido. Sin
+                        puntos.</div>
+                </div>
+
+                <!-- Maill -->
+
+                <div class="form-formulario" id="form-email">
+                    <label for="usuario-email" class="form-label">Mail:</label>
+                    <div class="formulario-input">
+                        <input type="email" class="form-control" name="usuario-email" id="usuario-email"
+                            placeholder="mail@mail.com">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="error" id="error-usuario-email">Por favor, ingrese un correo electrónico
+                        válido.</div>
+
+                </div>
+
+                <!-- Password -->
+                <div class="form-formulario" id="form-password">
+                    <label for="usuario-password" class="form-label">Contraseña</label>
+                    <div class="formulario-input">
+                        <input type="password" class="form-control" name="usuario-password" id="usuario-password">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="error" id="error-usuario-password">La contraseña tiene que ser de 4 a 12 dígitos
+                    </div>
+                </div>
+
+                <!-- Password Control -->
+                <div class="form-formulario" id="form-password2">
+                    <label for="usuario-password2" class="form-label">Repetir Contraseña</label>
+                    <div class="formulario-input">
+                        <input type="password" class="form-control" name="usuario-password2" id="usuario-password2">
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                    </div>
+                    <div class="error" id="error-usuario-password2">Las contraseñas deben ser iguales.
+                    </div>
+                </div>
+
+                <!-- Perdil de usuario -->
+                <div class="form-formulario" id="form-perfil">
+                    <label for="usuario-perfil" class="form-label">Perfil de Usuario</label>
+                    <select name="usuario-perfil" id="usuario-perfil" class="form-control">
+                        <option value="form-select">Maestra/o</option>
+                        <option value="form-select">Admin</option>
+                    </select>
+                </div>
+
+                <div class="form-btn-envia">
+                    <button type="submit" class="btn btn-primario">Alta Usuario</button>
+                    <button type="submit" class="btn btn-primario">Modificación Usuario</button>
+                    <button type="submit" class="btn btn-primario">Baja Usuario</button>
+                    <button type="reset" class="btn btn-secundario">Reset Datos</button>
+                </div>
+
+            </fieldset>
+
+        </form>
+    </main>
+
+    <script src="../static/js/validaciones_nuevo_ABM.js"></script>
+
+    <footer></footer>
+</body>
+
+</html>
