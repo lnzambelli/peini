@@ -9,6 +9,9 @@ const inputs = document.querySelectorAll('#formulario-registro input');
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+	direccion: /^.{4,20}$/, // 4 a 20 digitos.
+	codigopostal: /^.{4,10}$/, // 4 a 10 digitos.
+	ciudad: /^.{4,20}$/, // 4 a 12 digitos.
 	dni: /^.{6,14}$/, // 6 a 14 digitos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
@@ -21,14 +24,16 @@ const campos = {
 	apellido: false,
 	dni: false,
 	password: false,
+	direccion:false,
+	codigopostal:false,
+	ciudad:false,
 	email: false,
 	telefono: false,
 }
 
-
 // función tipo flecha de validacion
 
-const validarCampo = (expresion, input, campo,formulario) => {
+const validarCampo = (expresion, input, campo, formulario) => {
 
 	debugger;
 	//se llama a la funcion test y devuelve un booleano comparando con la expresion que definimos
@@ -115,25 +120,25 @@ const validarFormulario = (e) => {
                     validarCampo(expresiones.nombre, e.target, 'nombre', auxiliar[0]);
                     break;
                 case "lastname":
-                    validarCampo(expresiones.nombre, e.target, 'apellido', auxiliar[0]);
+                    validarCampo(expresiones.apellido, e.target, 'apellido', auxiliar[0]);
                     break;
                 case "dni":
-                    validarCampo(expresiones.nombre, e.target, 'dni', auxiliar[0]);
+                    validarCampo(expresiones.dni, e.target, 'dni', auxiliar[0]);
                     break;
                 case "direccion":
-                    validarCampo(expresiones.nombre, e.target, 'direccion', auxiliar[0]);
+                    validarCampo(expresiones.direccion, e.target, 'direccion', auxiliar[0]);
                     break;
                 case "codigopostal":
-                    validarCampo(expresiones.nombre, e.target, 'codigopostal', auxiliar[0]);
+                    validarCampo(expresiones.codigopostal, e.target, 'codigopostal', auxiliar[0]);
                     break;
                 case "ciudad":
-                    validarCampo(expresiones.nombre, e.target, 'ciudad', auxiliar[0]);
+                    validarCampo(expresiones.ciudad, e.target, 'ciudad', auxiliar[0]);
                     break;
                 case "telefono":
-                    validarCampo(expresiones.nombre, e.target, 'telefono', auxiliar[0]);
+                    validarCampo(expresiones.telefono, e.target, 'telefono', auxiliar[0]);
                     break;
                 case "email":
-                    validarCampo(expresiones.nombre, e.target, 'email', auxiliar[0]);
+                    validarCampo(expresiones.mail, e.target, 'email', auxiliar[0]);
                     break;
             }
             break; 
@@ -143,31 +148,32 @@ const validarFormulario = (e) => {
                     validarCampo(expresiones.nombre, e.target, 'nombre', auxiliar[0]);
                     break;
                 case "lastname":
-                    validarCampo(expresiones.nombre, e.target, 'apellido', auxiliar[0]);
+                    validarCampo(expresiones.apellido, e.target, 'apellido', auxiliar[0]);
                     break;
                 case "dni":
-                    validarCampo(expresiones.nombre, e.target, 'dni', auxiliar[0]);
+                    validarCampo(expresiones.dni, e.target, 'dni', auxiliar[0]);
                     break;
                 case "direccion":
-                    validarCampo(expresiones.nombre, e.target, 'direccion', auxiliar[0]);
+                    validarCampo(expresiones.direccion, e.target, 'direccion', auxiliar[0]);
                     break;
                 case "codigopostal":
-                    validarCampo(expresiones.nombre, e.target, 'codigopostal', auxiliar[0]);
+                    validarCampo(expresiones.codigopostal, e.target, 'codigopostal', auxiliar[0]);
                     break;
                 case "ciudad":
-                    validarCampo(expresiones.nombre, e.target, 'ciudad', auxiliar[0]);
+                    validarCampo(expresiones.ciudad, e.target, 'ciudad', auxiliar[0]);
                     break;
                 case "telefono":
-                    validarCampo(expresiones.nombre, e.target, 'telefono', auxiliar[0]);
+                    validarCampo(expresiones.telefono, e.target, 'telefono', auxiliar[0]);
                     break;
                 case "email":
-                    validarCampo(expresiones.nombre, e.target, 'email', auxiliar[0]);
+                    validarCampo(expresiones.mail, e.target, 'email', auxiliar[0]);
                     break;
             }
             break; 
     } 
 }; 
 
+// Fin funcion Validar Campos.
 
 document.addEventListener('DOMContentLoaded', function () {
 	var boton = document.getElementById('mostrarFormulario');
