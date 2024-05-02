@@ -10,181 +10,424 @@
     <!-- Favicon -->
     <link rel="icon" href="../static/img/favicon.ico">
 
+    <!-- Inconos -->
+    <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
+
     <title>Peini - Registro</title>
 
 </head>
 
 <body>
-
     <header></header>
-
     <main>
-        <!--Fromulario -->
-        <section class="">
-            <fieldset>
+        <form action="#" method="" id="">
+            <fieldset class="formulario-registro" id="formulario-registro">
+
                 <legend><strong>FORMULARIO DE REGISTRO</strong></legend>
 
-                <form action="#" method="get" id="form-register">
-                    <!-- Nombre -->
-                    <div class="form-control">
-                        <label for="firstname">Nombre:</label>
-                        <input type="text" name="firstname" id="firstname"
-                            title="No se pueden utilizar caracteres especiales. Solo letras son permitidas."
-                            placeholder="Escriba su Nombre" required>
-                        <div class="error" id="error-firstname">Por favor, ingrese un nombre válido.</div>
+                <!-- Registro de Alumno/a -->
+                <h2>Registro Alumno/a</h2>
+
+                <div class="form-formulario-registro">
+
+                    <!-- Nombre Alumno -->
+                    <div class="form-formulario-alumno" id="form-nombre-alumno">
+                        <label for="alumno-firstname" class="form-label">Nombre:</label>
+                        <div class="formulario-input">
+                            <input type="text" class="form-control" name="alumno-firstname" id="alumno-firstname"
+                                placeholder="Escriba su Nombre">
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                      class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-alumno-firstname">El nombre se completa con letras y espacios,
+                            pueden llevar acentos.</div>
+
                     </div>
 
-                    <!-- Apellido -->
-                    <div class="form-control">
-                        <label for="lastname">Apellido:</label>
-                        <input type="text" name="lastname" id="lastname"
-                            title="No se pueden utilizar caracteres especiales. Solo letras son permitidas."
-                            placeholder="Escriba su Apellido" required>
-                        <div class="error" id="error-lastname">Por favor, ingrese un apellido válido.</div>
+                    <!-- Apellido Alumno -->
+                    <div class="form-formulario-alumno" id="form-apellido-alumno">
+                        <label for="alumno-lastname" class="form-label">Apellido:</label>
+                        <div class="formulario-input">
+                            <input type="text" class="form-control" name="alumno-lastname" id="alumno-lastname"
+                                placeholder="Escriba su Apellido">
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-alumno-lastname">El Apellido se completa con letras y
+                            espacios,
+                            pueden llevar acentos.</div>
                     </div>
 
-                     <!-- DNI -->
+                    <!-- DNI Alumno -->
+                    <div class="form-formulario-alumno" id="form-dni-alumno">
+                        <label for="alumno-dni" class="form-label">DNI:</label>
+                        <div class="formulario-input">
+                            <input type="number" class="form-control" name="alumno-dni" id="alumno-dni"
+                                placeholder="Escriba su Documento" inputmode="numeric">
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-alumno-dni">Por favor, ingrese un Documento válido. Sin
+                            puntos.</div>
 
-                    <div class="form-control">
-                        <label for="dni">DNI:</label>
-                        <input type="number" name="dni" id="dni"
-                            title="No se pueden utilizar caracteres especiales. Solo números."
-                            placeholder="Escriba su Documento" required
-                            min="100000" max="9999999999" inputmode="numeric">
-                        <div class="error" id="error-dni">Por favor, ingrese un Documento válido.</div>
                     </div>
-                    
-
-                    <!-- Telefono -->
-                    <div class="form-control">
-                        <label for="telefono">Telefono:</label>
-                        <input type="number" name="telefono" id="telefono"
-                            title="No se pueden utilizar caracteres especiales. Solo Numeros."
-                            placeholder="Escriba su Telefono" required  min="100000" max="9999999999" inputmode="numeric">
-                        <div class="error" id="error-telefono">Por favor, ingrese un Telefono válido.</div>
-                    </div>
-
-                    <!-- Dirección -->
-                    <div class="form-control">
-                        <label for="direccion">Dirección:</label>
-                        <input type="text" name="direccion" id="direccion"
-                            title="No se pueden utilizar caracteres especiales. Solo letras, números y espacios en blanco son permitidos."
-                            placeholder="Escriba su Dirección" required>
-                        <div class="error" id="error-direccion">Por favor, ingrese una dirección válida.</div>
-                    </div>
-
-                    <!-- Cuidad -->
-                    <div class="form-control">
-                        <label for="">Ciudad:</label>
-                        <input type="text" name="ciudad" id="ciudad">
-                    </div>
-                    <div class="error" id="error-ciudad"></div>
-
-                    <!-- Codigo Postal -->
-                    <div class="form-control">
-                        <label for="">Codigo Postal:</label>
-                        <input type="text" name="codigopostal" id="codigopostal" required>
-                    </div>
-                    <div class="error" id="error-codigopostal"></div>
 
                     <!-- Fecha de nacimiento -->
-                    <div class="form-control">
-                        <label for="">Fecha de Nacimiento;</label>
-                        <input type="date" name="bithday" id="birthday" required>
+                    <div class="form-formulario-alumno" id="form-birthday-alumno">
+                        <label for="alumno-birthday" class="form-label">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" name="alumno-birthday" id="alumno-birthday" required>
                     </div>
 
-                    <!-- Mail -->
-                    <div class="form-control">
-                        <label for="email">Mail:</label>
-                        <input type="email" name="email" id="email" required>
-                        <div class="error" id="error-email">Por favor, ingrese un correo electrónico válido.</div>
+                    <!-- Selección de Sala -->
+                    <div class="form-formulario-alumno">
+                        <label for="nivel-a" class="form-label">Sala: </label>
+                        <div class="form-formulario-alumno form-control" id="alumno-sala">
+                            <input type="radio" id="nivel-a" name="nivel" value="1" required>
+                            <label for="nivel-a">A</label>
+
+                            <input type="radio" id="nivel-b" name="nivel" value="2" required>
+                            <label for="nivel-b">B</label>
+
+                            <input type="radio" id="nivel-c" name="nivel" value="3" required>
+                            <label for="nivel-c">C</label>
+                        </div>
                     </div>
 
-                    <!-- password -->
-                    <div class="form-control">
-                        <label for="">Contraseña:</label>
-                        <input type="password" name="password" id="password" required>
-                    </div>
-                    <div class="error" id="error-password"></div>
-                    <br>
+                    <!-- Turno -->
+                    <div class="form-formulario-alumno">
+                        <legend class="form-label">Turno:</legend>
+                        <div class="form-control">
+                            <input type="radio" id="turno-manana" name="turno" value="1" required>
+                            <label for="turno-manana">Mañana</label>
 
-                    <!-- Genero -->
-                    <div class="form-control">
-                        <label for="">Género: </label>
-                        <input type="radio" name="genero" value="1" required>Masculino
-                        <input type="radio" name="genero" value="2" required>Femenino
-                        <input type="radio" name="genero" value="3" required>No Binario
-                    </div>
-                    <br>
+                            <input type="radio" id="turno-tarde" name="turno" value="2" required>
+                            <label for="turno-tarde">Tarde</label>
+                        </div>
 
-                    <div class="form-control">
-                        <!-- En este código, cada vez que se hace clic en una de las checkboxes, se llama a la función limitarSeleccion(this), donde this hace referencia a la checkbox que fue seleccionada. Esta función desactiva todas las otras checkboxes y deja solo la seleccionada. De esta manera, solo una opción puede ser seleccionada a la vez.  -->
-                        <label for="">Sala: </label>
-                        <input type="checkbox" name="Nivel" value="1" onclick="limitarSeleccion(this)"> A
-                        <input type="checkbox" name="Nivel" value="2" onclick="limitarSeleccion(this)"> B
-                        <input type="checkbox" name="Nivel" value="3" onclick="limitarSeleccion(this)"> C
-                        <input type="checkbox" name="Nivel" value="4" onclick="limitarSeleccion(this)"> D
                     </div>
 
-                      <!-- Turno -->
-                      <div class="form-control">
-                        <label for="">Turno: </label>
-                        <input type="radio" name="genero" value="1" required>Mañana
-                        <input type="radio" name="genero" value="2" required>Tarde
+                    <!-- Password Alumno -->
+                    <div class="form-formulario-alumno" id="form-password-alumno">
+                        <label for="alumno-password" class="form-label">Contraseña</label>
+                        <div class="formulario-input">
+                            <input type="password" class="form-control" name="alumno-password" id="alumno-password">
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-alumno-password">La contraseña tiene que ser de 4 a 12 dígitos
+                        </div>
                     </div>
 
-                    <br><br>
-
-                    <!-- Perfil-->
-                    <div class="form-control">
-                        <label for="">Perfil de Usuario: </label>
-                        <select name="perfil" id="perfil" class="form-select">
-                            <option value="">Alumna/o</option>
-                            <option value="">Maestra/o</option>
-                            <option value="">Admin</option>
-
-                        </select>
+                    <!-- Password Control alumno -->
+                    <div class="form-formulario-alumno" id="form-password2-alumno">
+                        <label for="alumno-password2" class="form-label">Contraseña Repetir</label>
+                        <div class="formulario-input">
+                            <input type="password" class="form-control" name="alumno-password2" id="alumno-password2">
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-alidacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-alumno-password2">Las contraseñas deben ser iguales.
+                        </div>
                     </div>
-                    <br>
 
-
-                    <!-- Enviar y Borrar Datos-->
-                    <div>
-                        <button type="submit">Alta Usuario</button>
-                        <button type="submit">Modificación Usuario</button>
-                        <button type="submit">Baja Usuario</button>
-                        <button type="reset">Reset Datos</button>
+                    <!-- Subir archivos -->
+                    <div class="form-formulario-alumno" id="form-upload-archive">
+                        <label for="archivo-upload" class="form-label">Subir Archivo DNI:</label>
+                        <div class="formulario-input">
+                            <input type="file" class="form-control" name="archivo-upload" id="archivo-upload">
+                        </div>
+                        <div class="error" id="error-archivo-upload">Por favor, seleccione un archivo válido.</div>
                     </div>
-                    <br><br>
 
-                </form>
+                    <!-- FIN controles de formulario para el alumno -->
+                </div>
+
+                <!-- Div de los 2 responsables. -->
+                <div class="registro-responsable">
+
+                    <h2>Registro Responsable</h2>
+
+                    <!-- Div registro Responsable 1 -->
+                    <div class="responsable form-formulario-registro">
+                        <!-- Nombre responsable -->
+                        <div class="form-formulario-responsable" id="form-nombre-responsable">
+                            <label for="responsable-firstname" class="form-label">Nombre:</label>
+                            <div class="formulario-input">
+                                <input type="text" class="form-control" name="responsable-firstname"
+                                    id="responsable-firstname" placeholder="Escriba su Nombre">
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                      class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-firstname">El nombre se completa con letras y
+                                espacios,
+                                pueden llevar acentos.</div>
+                        </div>
+
+                        <!-- Apellido responsable -->
+                        <div class="form-formulario-responsable" id="form-apellido-responsable">
+                            <label for="responsable-lastname" class="form-label">Apellido:</label>
+                            <div class="formulario-input">
+                                <input type="text" class="form-control" name="responsable-lastname"
+                                    id="responsable-lastname" placeholder="Escriba su Apellido">
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-lastname">El Apellido se completa con letras y
+                                espacios,
+                                pueden llevar acentos.</div>
+                        </div>
+
+                        <!-- DNI responsable -->
+                        <div class="form-formulario-responsable" id="form-dni-responsable">
+                            <label for="responsable-dni" class="form-label">DNI:</label>
+                            <div class="formulario-input">
+                                <input type="number" class="form-control" name="responsable-dni" id="responsable-dni"
+                                    placeholder="Escriba su Documento" inputmode="numeric"">
+                  <!-- <img src=" ./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                    class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-dni">Por favor, ingrese un Documento válido. Sin
+                                puntos.</div>
+                        </div>
+
+                        <!-- Fecha de nacimiento Rsponsable -->
+                        <div class="form-formulario-responsable" id="form-birthday-responsable">
+                            <label for="responsable-birthday" class="form-label">Fecha de Nacimiento:</label>
+                            <input type="date" class="form-control" name="responsable-birthday"
+                                id="responsable-birthday" required>
+                        </div>
+
+                        <!-- Dirección Responsable-->
+                        <div class="form-formulario-responsable" id="form-direccion-responsable">
+                            <label for="responsable-direccion" class="form-label">Dirección:</label>
+                            <div class="formulario-input">
+                                <input type="text" class="form-control" name="responsable-direccion"
+                                    id="responsable-direccion" placeholder="Escriba su Dirección" required>
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-direccion">Por favor, ingrese una dirección válida.
+                            </div>
+                        </div>
+
+                        <!-- Codigo Postal Responsable-->
+                        <div class="form-formulario-responsable" id="form-codigopostal-responsable">
+                            <label for="responsable-codigopostal" class="form-label">Codigo Postal:</label>
+                            <div class="formulario-input">
+                                <input type="text" class="form-control" name="responsable-codigopostal"
+                                    id="responsable-codigopostal" placeholder="Escriba su Codigo Postal." required>
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-codigopostal">Por favor, ingrese un codigo postal.
+                            </div>
+                        </div>
+
+                        <!-- Ciudad Responsable-->
+                        <div class="form-formulario-responsable" id="form-ciudad-responsable">
+                            <label for="responsable-ciudad" class="form-label">Ciudad:</label>
+                            <div class="formulario-input">
+                                <input type="text" class="form-control" name="responsable-ciudad"
+                                    id="responsable-ciudad" placeholder="Escriba su Codigo Postal." required>
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-ciudad-codigopostal">Por favor, ingrese un codigo postal.</div>
+                        </div>
+
+                        <!-- Telefono Responsable  -->
+                        <div class="form-formulario-responsable" id="form-telefono-responsable">
+                            <label for="responsable-telefono" class="form-label">Telefono:</label>
+                            <input type="number" class="form-control" name="responsable-telefono"
+                                id="responsable-telefono" placeholder="Escriba su Telefono" required
+                                inputmode="numeric">
+                            <div class="error" id="error-responsable-telefono">Por favor, ingrese un Telefono válido.
+                            </div>
+                        </div>
+
+                        <!-- Maill Responsable -->
+                        <div class="form-formulario-responsable" id="form-email-responsable">
+                            <label for="responsable-email" class="form-label">Mail:</label>
+                            <div class="formulario-input">
+                                <input type="email" class="form-control" name="responsable-email" id="responsable-email"
+                                    placeholder="mail@mail.com">
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <div class="error" id="error-responsable-email">Por favor, ingrese un correo electrónico
+                                válido.</div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Muestro segundo responsable -->
+
+                    <!-- Boton para ver los datos del segundo responsable -->
+                    <button type="button" id="mostrarFormulario" class="btn btn-secondary">Agregar otro
+                        Responsable</button>
+
+
+                    <!-- Div Segundo Responsable -->
+                    <div id="responsable2" style="display:none;">
+                        <h2>Segundo Responsable</h2>
+
+                        <!-- Div para poner el formulario en 2 columnas -->
+                        <div class="form-formulario-registro">
+
+                            <!-- Nombre responsable-2 -->
+                            <div class="form-formulario-responsable-2" id="form-nombre-responsable2">
+                                <label for="responsable2-firstname" class="form-label">Nombre:</label>
+                                <input type="text" class="form-control" name="responsable2-firstname"
+                                    id="responsable2-firstname" placeholder="Escriba su Nombre">
+                                <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                      class="icono-svg formulario__validacion-estado"> -->
+                                <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+
+                                <div class="error" id="error-responsable2-firstname">El nombre se completa con letras y
+                                    espacios,
+                                    pueden llevar acentos.</div>
+                            </div>
+
+                            <!-- Apellido responsable-2 -->
+                            <div class="form-formulario-responsable-2" id="form-apellido-responsable2">
+                                <label for="responsable2-lastname" class="form-label">Apellido:</label>
+                                <div class="formulario-input">
+                                    <input type="text" class="form-control" name="responsable2-lastname"
+                                        id="responsable2-lastname" placeholder="Escriba su Apellido">
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-responsable2-lastname">El Apellido se completa con letras y
+                                    espacios,
+                                    pueden llevar acentos.</div>
+                            </div>
+
+                            <!-- DNI responsable-2 -->
+                            <div class="form-formulario-responsable-2" id="form-dni-responsable2">
+                                <label for="responsable2-dni" class="form-label">DNI:</label>
+                                <div class="formulario-input">
+                                    <input type="number" class="form-control" name="responsable2-dni"
+                                        id="responsable2-dni" placeholder="Escriba su Documento" inputmode="numeric">
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-responsable2-dni">Por favor, ingrese un Documento válido.
+                                    Sin
+                                    puntos.</div>
+                            </div>
+
+                            <!-- Fecha de nacimiento Rsponsable -->
+                            <div class="form-formulario-responsable-2" id="form-birthday-responsable2">
+                                <label for="responsable2-birthday" class="form-label">Fecha de Nacimiento:</label>
+                                <input type="date" class="form-control" name="responsable2-birthday"
+                                    id="responsable2-birthday" required>
+                            </div>
+
+                            <!-- Dirección responsable-2-->
+                            <div class="form-formulario-responsable-2" id="form-direccion-responsable2">
+                                <label for="responsable2-direccion" class="form-label">Dirección:</label>
+                                <div class="formulario-input">
+                                    <input type="text" class="form-control" name="responsable2-direccion"
+                                        id="responsable2-direccion" placeholder="Escriba su Dirección" required>
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-responsable2-direccion">Por favor, ingrese una dirección
+                                    válida.</div>
+                            </div>
+
+                            <!-- Codigo Postal responsable-2-->
+                            <div class="form-formulario-responsable-2" id="form-codigopostal-responsable2">
+                                <label for="responsable2-codigopostal" class="form-label">Dirección:</label>
+                                <div class="formulario-input">
+                                    <input type="text" class="form-control" name="responsable2-codigopostal"
+                                        id="responsable2-codigopostal" placeholder="Escriba su Codigo Postal." required>
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-responsable2-codigopostal">Por favor, ingrese un codigo
+                                    postal.</div>
+                            </div>
+
+                            <!-- Ciudad responsable-2-->
+                            <div class="form-formulario-responsable-2" id="form-ciudad-responsable2">
+                                <label for="responsable2-ciudad" class="form-label">Dirección:</label>
+                                <div class="formulario-input">
+                                    <input type="text" class="form-control" name="responsable2-ciudad"
+                                        id="responsable2-ciudad" placeholder="Escriba su Codigo Postal." required>
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                              class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-ciudad-codigopostal">Por favor, ingrese un codigo postal.
+                                </div>
+                            </div>
+
+                            <!-- Telefono responsable-2  -->
+                            <div class="form-formulario-responsable-2" id="form-telefono-responsable2">
+                                <label for="responsable2-telefono" class="form-label">Telefono:</label>
+                                <input type="number" class="form-control" name="responsable2-telefono"
+                                    id="responsable2-telefono" placeholder="Escriba su Telefono" required
+                                    inputmode="numeric">
+                                <div class="error" id="error-responsable2-telefono">Por favor, ingrese un Telefono
+                                    válido.</div>
+                            </div>
+
+                            <!-- Maill responsable-2 -->
+                            <div class="form-formulario-responsable-2" id="form-email-responsable2">
+                                <label for="responsable2-email" class="form-label">Mail:</label>
+                                <div class="formulario-input">
+                                    <input type="email" class="form-control" name="responsable2-email"
+                                        id="responsable2-email" placeholder="mail@mail.com">
+                                    <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
+                                    <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                                </div>
+                                <div class="error" id="error-responsable2-email">Por favor, ingrese un correo
+                                    electrónico
+                                    válido.</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- FIN Contenido oculto para segundo responsable -->
+
+                <!-- Enviar y Borrar Datos-->
+                <div class="form-btn-envia">
+                    <button type="submit" class="form-btn btn">Alta Usuario</button>
+                    <button type="submit" class="form-btn btn">Modificación Usuario</button>
+                    <button type="submit" class="form-btn btn">Baja Usuario</button>
+                    <button type="reset" class="form-btn btn">Reset Datos</button>
+                </div>
+
             </fieldset>
-        </section>
+        </form>
     </main>
-    <script src="../static/js/validaciones.js"></script>
-    <script>
 
-        // Asignar eventos de entrada a los campos para validar en tiempo real, Toma los campos en el Input del usuarios,el error definido y el Pattern para hacer la validación.
-        document.getElementById("firstname").addEventListener("input", function () {
-            validarCampo("firstname", "error-firstname", /^[a-zA-Z\s]+$/);
-        });
-
-        document.getElementById("lastname").addEventListener("input", function () {
-            validarCampo("lastname", "error-lastname", /^[a-zA-Z\s]+$/);
-        });
-
-        document.getElementById("direccion").addEventListener("input", function () {
-            validarCampo("direccion", "error-direccion", /^[a-zA-Z0-9\s]+$/);
-        });
-
-        document.getElementById("email").addEventListener("input", function () {
-            validarCampo("email", "error-email", /^[^\s@]+@[^\s@]+\.[^\s@]+$/);
-        });
-
-    </script>
+    <script src="./statics/js/validaciones_nuevo_registro.js"></script>
 
     <footer></footer>
-
 </body>
 
 </html>
