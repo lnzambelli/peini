@@ -324,7 +324,7 @@ body {
     box-shadow: 3px 0px 30px gray;
 }
 
-/* Validación iconos */
+/* Validación */
 
 .form-formulario-correcto .form-validacion-estado {
     color: var(--color-correcto);
@@ -348,8 +348,7 @@ body {
 .form-formulario-error .form-control {
     border: 5px solid var(--color-error);
 }
-
-/* Fin Validación iconos */
+/* Fin Validación */
 
 .error-activo {
     display: block;
