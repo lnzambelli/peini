@@ -35,7 +35,7 @@ const campos = {
 
 const validarCampo = (expresion, input, campo, formulario) => {
 
-	debugger;
+	// debugger;
 	//se llama a la funcion test y devuelve un booleano comparando con la expresion que definimos
 	if (expresion.test(input.value)) {
 
@@ -93,7 +93,7 @@ const validarPassword2 = () => {
 const validarFormulario = (e) => {
 
     var auxiliar = e.target.name.split("-");
-
+	// debugger;
     switch (auxiliar[0]) {
         case "alumno":
             switch (auxiliar[1]) {
