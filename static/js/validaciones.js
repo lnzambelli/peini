@@ -106,6 +106,7 @@ const validarFormulario = (e) => {
                 case "dni":
                     validarCampo(expresiones.dni, e.target, 'dni', auxiliar[0]);
                     break;
+					validarPassword2();
                 case "password":
                     validarCampo(expresiones.password, e.target, 'password', auxiliar[0]);
                     break;
