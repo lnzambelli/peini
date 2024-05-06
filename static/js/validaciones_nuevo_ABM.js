@@ -7,7 +7,7 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	dni: /^.{6,14}$/, // 4 a 12 digitos.
+	dni: /^.{6,14}$/, // 4 a 14 digitos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 
@@ -19,7 +19,6 @@ const campos = {
 	dni: false,
 	password: false,
 	email: false,
-
 }
 
 // función tipo flecha de validacion
@@ -105,12 +104,12 @@ const validarFormulario = (e) => {
 
 		case "usuario-password":
 			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
 			break;
 
 
 		case "usuario-password2":
 			validarPassword2();
-
 			break;
 
 	}
@@ -125,7 +124,7 @@ inputs.forEach((input) => {
 	input.addEventListener('blur', validarFormulario); // blur cuando le damos click fuera del input se ejecuta.
 });
 
-// Con esto cuando realizamos el submit no cambia la url. es para la demostración
-formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-});
+// // Con esto cuando realizamos el submit no cambia la url. es para la demostración
+// formulario.addEventListener('submit', (e) => {
+// 	e.preventDefault();
+// });
