@@ -325,7 +325,10 @@ body {
 }
 
 /* Mensaje de control error o exitoso*/
-
+.form-valido-campo {
+    grid-column: span 2;
+    text-align: center;
+}
 
 .form-mensaje-valido {
 	font-size: 30px;
