@@ -324,7 +324,35 @@ body {
     box-shadow: 3px 0px 30px gray;
 }
 
-/* Validación */
+/* Mensaje de control error o exitoso*/
+
+
+.form-mensaje-valido {
+	font-size: 30px;
+	font-weight: bold;
+	border-radius: 5px;
+    width: 100%;
+	display: none;
+    text-align: center;
+}
+
+.form-valido-campo-exito {
+    margin: 50px;
+	border: 3px solid var(--color-correcto);
+	border-radius: 3px;
+	box-shadow: 3px 0px 30px gray;
+}
+
+.form-valido-campo-error {
+	margin: 50px;
+	border: 3px solid var(--color-error);
+	border-radius: 3px;
+	box-shadow: 3px 0px 30px gray;  
+}
+
+.form-mensaje-valido-activo {
+	display: block;
+}
 
 .form-formulario-correcto .form-validacion-estado {
     color: var(--color-correcto);
@@ -405,21 +433,30 @@ body {
 @media screen and (max-width: 800px) {
 
     .formulario,
-    .formulario-registro,
-    .form-formulario-registro {
-        grid-template-columns: 1fr;
-    }
+	.formulario-registro,
+	.form-formulario-registro {
+		grid-template-columns: 1fr;
+	}
 
 
-    .form-btn-envia {
-        grid-column: 1;
-        text-align: center;
-    }
+	.form-btn-envia {
+		grid-column: 1;
+		text-align: center;
+	}
 
-    .btn {
-        width: 100%;
-        margin-top: 10px;
-        /* Ajusta este valor según sea necesario */
-    }
+	.form-valido-campo {
+		grid-column: 1;
+		text-align: center;
+	}
+
+	.form-mensaje-valido {
+		font-size: 14px;
+	}
+
+	.btn {
+		width: 100%;
+		margin-top: 10px;
+		/* Ajusta este valor según sea necesario */
+	}
 
 }

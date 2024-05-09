@@ -27,7 +27,8 @@
     <main>
         <img src="https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg"
             alt="" style="max-height: 300px; width: 100%; object-fit: cover; margin-bottom: 30px;">
-        <form action="" method="" id="form-registro">
+        <form action="" id="form-registro">
+
             <fieldset class="formulario-registro" id="formulario-registro">
 
                 <legend><strong>FORMULARIO DE REGISTRO</strong></legend>
@@ -38,33 +39,33 @@
                 <div class="form-formulario-registro">
 
                     <!-- Nombre Alumno -->
-                    <div class="form-formulario-alumno" id="form-nombre-alumno">
-                        <label for="alumno-firstname" class="form-label">Nombre:</label>
+                    <div class="form-formulario-alumno validacion-reset" id="form-nombre-alumno">
+                        <label for="alumno-nombre" class="form-label">Nombre:</label>
                         <div class="formulario-input">
-                            <input type="text" class="form-control" name="alumno-firstname" id="alumno-firstname"
+                            <input type="text" class="form-control" name="alumno-nombre" id="alumno-nombre"
                                 placeholder="Escriba su Nombre">
                             <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                         </div>
-                        <div class="error" id="error-alumno-firstname">El nombre se completa con letras y espacios,
+                        <div class="error" id="error-alumno-nombre">El nombre se completa con letras y espacios,
                             pueden llevar acentos.</div>
 
                     </div>
 
                     <!-- Apellido Alumno -->
-                    <div class="form-formulario-alumno" id="form-apellido-alumno">
-                        <label for="alumno-lastname" class="form-label">Apellido:</label>
+                    <div class="form-formulario-alumno validacion-reset" id="form-apellido-alumno">
+                        <label for="alumno-apellido" class="form-label">Apellido:</label>
                         <div class="formulario-input">
-                            <input type="text" class="form-control" name="alumno-lastname" id="alumno-lastname"
+                            <input type="text" class="form-control" name="alumno-apellido" id="alumno-apellido"
                                 placeholder="Escriba su Apellido">
                             <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                         </div>
-                        <div class="error" id="error-alumno-lastname">El Apellido se completa con letras y
+                        <div class="error" id="error-alumno-apellido">El Apellido se completa con letras y
                             espacios,
                             pueden llevar acentos.</div>
                     </div>
 
                     <!-- DNI Alumno -->
-                    <div class="form-formulario-alumno" id="form-dni-alumno">
+                    <div class="form-formulario-alumno validacion-reset" id="form-dni-alumno">
                         <label for="alumno-dni" class="form-label">DNI:</label>
                         <div class="formulario-input">
                             <input type="number" class="form-control" name="alumno-dni" id="alumno-dni"
@@ -77,22 +78,22 @@
                     </div>
 
                     <!-- Fecha de nacimiento -->
-                    <div class="form-formulario-alumno" id="form-birthday-alumno">
+                    <div class="form-formulario-alumno validacion-reset" id="form-birthday-alumno">
                         <label for="alumno-birthday" class="form-label">Fecha de Nacimiento:</label>
-                        <input type="date" class="form-control" name="alumno-birthday" id="alumno-birthday" required>
+                        <input type="date" class="form-control" name="alumno-birthday" id="alumno-birthday">
                     </div>
 
                     <!-- Selección de Sala -->
-                    <div class="form-formulario-alumno">
+                    <div class="form-formulario-alumno" id="form-sala">
                         <label for="nivel-a" class="form-label">Sala: </label>
-                        <div class="form-formulario-alumno form-control" id="alumno-sala">
-                            <input type="radio" id="nivel-a" name="nivel" value="1" required>
+                        <div class="form-formulario-alumno form-control">
+                            <input type="radio" id="nivel-a" name="alumno-sala" value="1" required>
                             <label for="nivel-a">A</label>
 
-                            <input type="radio" id="nivel-b" name="nivel" value="2" required>
+                            <input type="radio" id="nivel-b" name="alumno-sala" value="2" required>
                             <label for="nivel-b">B</label>
 
-                            <input type="radio" id="nivel-c" name="nivel" value="3" required>
+                            <input type="radio" id="nivel-c" name="alumno-sala" value="3" required>
                             <label for="nivel-c">C</label>
                         </div>
                     </div>
@@ -101,17 +102,17 @@
                     <div class="form-formulario-alumno">
                         <label class="form-label">Turno:</label>
                         <div class="form-control">
-                            <input type="radio" id="turno-manana" name="turno" value="1" required>
+                            <input type="radio" id="turno-manana" name="alumno-turno" value="1" required>
                             <label for="turno-manana">Mañana</label>
 
-                            <input type="radio" id="turno-tarde" name="turno" value="2" required>
+                            <input type="radio" id="turno-tarde" name="alumno-turno" value="2" required>
                             <label for="turno-tarde">Tarde</label>
                         </div>
 
                     </div>
 
                     <!-- Password Alumno -->
-                    <div class="form-formulario-alumno" id="form-password-alumno">
+                    <div class="form-formulario-alumno validacion-reset" id="form-password-alumno">
                         <label for="alumno-password" class="form-label">Contraseña</label>
                         <div class="formulario-input">
                             <input type="password" class="form-control" name="alumno-password" id="alumno-password">
@@ -122,7 +123,7 @@
                     </div>
 
                     <!-- Password Control alumno -->
-                    <div class="form-formulario-alumno" id="form-password2-alumno">
+                    <div class="form-formulario-alumno validacion-reset" id="form-password2-alumno">
                         <label for="alumno-password2" class="form-label">Contraseña Repetir</label>
                         <div class="formulario-input">
                             <input type="password" class="form-control" name="alumno-password2" id="alumno-password2">
@@ -133,10 +134,10 @@
                     </div>
 
                     <!-- Subir archivos -->
-                    <div class="form-formulario-alumno" id="form-upload-archive">
+                    <div class="form-formulario-alumno validacion-reset" id="form-upload-archive">
                         <label for="archivo-upload" class="form-label">Subir Archivo DNI:</label>
                         <div class="formulario-input">
-                            <input type="file" class="form-control" name="archivo-upload" id="archivo-upload">
+                            <input type="file" class="form-control" name="archivo-upload" id="archivo-upload" required>
                         </div>
                         <div class="error" id="error-archivo-upload">Por favor, seleccione un archivo válido.</div>
                     </div>
@@ -152,33 +153,33 @@
                     <!-- Div registro Responsable 1 -->
                     <div class="responsable form-formulario-registro">
                         <!-- Nombre responsable -->
-                        <div class="form-formulario-responsable" id="form-nombre-responsable">
-                            <label for="responsable-firstname" class="form-label">Nombre:</label>
+                        <div class="form-formulario-responsable validacion-reset" id="form-nombre-responsable">
+                            <label for="responsable-nombre" class="form-label">Nombre:</label>
                             <div class="formulario-input">
-                                <input type="text" class="form-control" name="responsable-firstname"
-                                    id="responsable-firstname" placeholder="Escriba su Nombre">
+                                <input type="text" class="form-control" name="responsable-nombre"
+                                    id="responsable-nombre" placeholder="Escriba su Nombre">
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-firstname">El nombre se completa con letras y
+                            <div class="error" id="error-responsable-nombre">El nombre se completa con letras y
                                 espacios,
                                 pueden llevar acentos.</div>
                         </div>
 
                         <!-- Apellido responsable -->
-                        <div class="form-formulario-responsable" id="form-apellido-responsable">
-                            <label for="responsable-lastname" class="form-label">Apellido:</label>
+                        <div class="form-formulario-responsable validacion-reset" id="form-apellido-responsable">
+                            <label for="responsable-apellido" class="form-label">Apellido:</label>
                             <div class="formulario-input">
-                                <input type="text" class="form-control" name="responsable-lastname"
-                                    id="responsable-lastname" placeholder="Escriba su Apellido">
+                                <input type="text" class="form-control" name="responsable-apellido"
+                                    id="responsable-apellido" placeholder="Escriba su Apellido">
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-lastname">El Apellido se completa con letras y
+                            <div class="error" id="error-responsable-apellido">El Apellido se completa con letras y
                                 espacios,
                                 pueden llevar acentos.</div>
                         </div>
 
                         <!-- DNI responsable -->
-                        <div class="form-formulario-responsable" id="form-dni-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-dni-responsable">
                             <label for="responsable-dni" class="form-label">DNI:</label>
                             <div class="formulario-input">
                                 <input type="number" class="form-control" name="responsable-dni" id="responsable-dni"
@@ -190,14 +191,14 @@
                         </div>
 
                         <!-- Fecha de nacimiento Rsponsable -->
-                        <div class="form-formulario-responsable" id="form-birthday-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-birthday-responsable">
                             <label for="responsable-birthday" class="form-label">Fecha de Nacimiento:</label>
                             <input type="date" class="form-control" name="responsable-birthday"
-                                id="responsable-birthday" required>
+                                id="responsable-birthday">
                         </div>
 
                         <!-- Dirección Responsable-->
-                        <div class="form-formulario-responsable" id="form-direccion-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-direccion-responsable">
                             <label for="responsable-direccion" class="form-label">Dirección:</label>
                             <div class="formulario-input">
                                 <input type="text" class="form-control" name="responsable-direccion"
@@ -209,7 +210,7 @@
                         </div>
 
                         <!-- Codigo Postal Responsable-->
-                        <div class="form-formulario-responsable" id="form-codigopostal-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-codigopostal-responsable">
                             <label for="responsable-codigopostal" class="form-label">Codigo Postal:</label>
                             <div class="formulario-input">
                                 <input type="text" class="form-control" name="responsable-codigopostal"
@@ -221,18 +222,18 @@
                         </div>
 
                         <!-- Ciudad Responsable-->
-                        <div class="form-formulario-responsable" id="form-ciudad-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-ciudad-responsable">
                             <label for="responsable-ciudad" class="form-label">Ciudad:</label>
                             <div class="formulario-input">
                                 <input type="text" class="form-control" name="responsable-ciudad"
                                     id="responsable-ciudad" placeholder="Escriba su Codigo Postal." required>
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-ciudad-ciudad">Por favor, ingrese un codigo postal.</div>
+                            <div class="error" id="error-ciudad-ciudad">Por favor, ingrese una ciudad.</div>
                         </div>
 
                         <!-- Telefono Responsable  -->
-                        <div class="form-formulario-responsable" id="form-telefono-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-telefono-responsable">
                             <label for="responsable-telefono" class="form-label">Telefono:</label>
                             <div class="formulario-input">
                                 <input type="number" class="form-control" name="responsable-telefono"
@@ -244,7 +245,7 @@
                         </div>
 
                         <!-- Maill Responsable -->
-                        <div class="form-formulario-responsable" id="form-email-responsable">
+                        <div class="form-formulario-responsable validacion-reset" id="form-email-responsable">
                             <label for="responsable-email" class="form-label">Mail:</label>
                             <div class="formulario-input">
                                 <input type="email" class="form-control" name="responsable-email" id="responsable-email"
@@ -273,33 +274,33 @@
                         <div class="form-formulario-registro">
 
                             <!-- Nombre responsable-2 -->
-                            <div class="form-formulario-responsable-2" id="form-nombre-responsable2">
-                                <label for="responsable2-firstname" class="form-label">Nombre:</label>
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-nombre-responsable2">
+                                <label for="responsable2-nombre" class="form-label">Nombre:</label>
                                 <div class="formulario-input">
-                                    <input type="text" class="form-control" name="responsable2-firstname"
-                                        id="responsable2-firstname" placeholder="Escriba su Nombre">
+                                    <input type="text" class="form-control" name="responsable2-nombre"
+                                        id="responsable2-nombre" placeholder="Escriba su Nombre">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-firstname">El nombre se completa con letras y
+                                <div class="error" id="error-responsable2-nombre">El nombre se completa con letras y
                                     espacios,
                                     pueden llevar acentos.</div>
                             </div>
 
                             <!-- Apellido responsable-2 -->
-                            <div class="form-formulario-responsable-2" id="form-apellido-responsable2">
-                                <label for="responsable2-lastname" class="form-label">Apellido:</label>
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-apellido-responsable2">
+                                <label for="responsable2-apellido" class="form-label">Apellido:</label>
                                 <div class="formulario-input">
-                                    <input type="text" class="form-control" name="responsable2-lastname"
-                                        id="responsable2-lastname" placeholder="Escriba su Apellido">
+                                    <input type="text" class="form-control" name="responsable2-apellido"
+                                        id="responsable2-apellido" placeholder="Escriba su Apellido">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-lastname">El Apellido se completa con letras y
+                                <div class="error" id="error-responsable2-apellido">El Apellido se completa con letras y
                                     espacios,
                                     pueden llevar acentos.</div>
                             </div>
 
                             <!-- DNI responsable-2 -->
-                            <div class="form-formulario-responsable-2" id="form-dni-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-dni-responsable2">
                                 <label for="responsable2-dni" class="form-label">DNI:</label>
                                 <div class="formulario-input">
                                     <input type="number" class="form-control" name="responsable2-dni"
@@ -312,14 +313,15 @@
                             </div>
 
                             <!-- Fecha de nacimiento Rsponsable -->
-                            <div class="form-formulario-responsable-2" id="form-birthday-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-birthday-responsable2">
                                 <label for="responsable2-birthday" class="form-label">Fecha de Nacimiento:</label>
                                 <input type="date" class="form-control" name="responsable2-birthday"
-                                    id="responsable2-birthday" required>
+                                    id="responsable2-birthday">
                             </div>
 
                             <!-- Dirección responsable-2-->
-                            <div class="form-formulario-responsable-2" id="form-direccion-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset"
+                                id="form-direccion-responsable2">
                                 <label for="responsable2-direccion" class="form-label">Dirección:</label>
                                 <div class="formulario-input">
                                     <input type="text" class="form-control" name="responsable2-direccion"
@@ -331,8 +333,9 @@
                             </div>
 
                             <!-- Codigo Postal responsable-2-->
-                            <div class="form-formulario-responsable-2" id="form-codigopostal-responsable2">
-                                <label for="responsable2-codigopostal" class="form-label">Dirección:</label>
+                            <div class="form-formulario-responsable-2 validacion-reset"
+                                id="form-codigopostal-responsable2">
+                                <label for="responsable2-codigopostal" class="form-label">Codigo Postal:</label>
                                 <div class="formulario-input">
                                     <input type="text" class="form-control" name="responsable2-codigopostal"
                                         id="responsable2-codigopostal" placeholder="Escriba su Codigo Postal.">
@@ -343,19 +346,19 @@
                             </div>
 
                             <!-- Ciudad responsable-2-->
-                            <div class="form-formulario-responsable-2" id="form-ciudad-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-ciudad-responsable2">
                                 <label for="responsable2-ciudad" class="form-label">Dirección:</label>
                                 <div class="formulario-input">
                                     <input type="text" class="form-control" name="responsable2-ciudad"
                                         id="responsable2-ciudad" placeholder="Escriba su Codigo Postal.">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-ciudad-codigopostal">Por favor, ingrese un codigo postal.
+                                <div class="error" id="error-ciudad-codigopostal">Por favor, ingrese una ciudad.
                                 </div>
                             </div>
 
                             <!-- Telefono responsable-2  -->
-                            <div class="form-formulario-responsable-2" id="form-telefono-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-telefono-responsable2">
                                 <label for="responsable2-telefono" class="form-label">Telefono:</label>
                                 <div class="formulario-input">
                                     <input type="number" class="form-control" name="responsable2-telefono"
@@ -367,7 +370,7 @@
                             </div>
 
                             <!-- Maill responsable-2 -->
-                            <div class="form-formulario-responsable-2" id="form-email-responsable2">
+                            <div class="form-formulario-responsable-2 validacion-reset" id="form-email-responsable2">
                                 <label for="responsable2-email" class="form-label">Mail:</label>
                                 <div class="formulario-input">
                                     <input type="email" class="form-control" name="responsable2-email"
@@ -387,12 +390,18 @@
 
                 <!-- FIN Contenido oculto para segundo responsable -->
 
+                <!-- Muestro formulario correcto  -->
+                <div class="form-valido-campo" id="form-valido-campo">
+                    <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inptus
+                    </p>
+                </div>
+
                 <!-- Enviar y Borrar Datos-->
                 <div class="form-btn-envia">
-                    <button type="submit" class="btn btn-primario">Alta Usuario</button>
-                    <button type="submit" class="btn btn-primario">Modificación Usuario</button>
-                    <button type="submit" class="btn btn-primario">Baja Usuario</button>
-                    <button type="reset" class="btn btn-secundario">Reset Datos</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Alta Usuario</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Modificación Usuario</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Baja Usuario</button>
+                    <button type="reset" class="form-btn btn">Reset Datos</button>
                 </div>
 
             </fieldset>
