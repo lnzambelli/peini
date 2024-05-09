@@ -13,7 +13,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
 
     <!-- Inconos -->
     <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
@@ -29,11 +30,12 @@
 
     <main>
 
-        <img src="https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg" alt="" style="max-height: 300px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+        <img src="https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg"
+            alt="" style="max-height: 300px; width: 100%; object-fit: cover; margin-bottom: 30px;">
 
-        <form action="" method="" id="form-abm">
+        <form action="" id="formulario-usuario">
             <fieldset class="formulario" id="formulario">
-                <legend><strong>ABM DE USUARIOS</strong></legend>
+                <legend>AMB DE USUARIOS</legend>
 
                 <!-- Nombre -->
                 <div class="form-formulario" id="form-nombre">
@@ -41,6 +43,8 @@
                     <div class="formulario-input">
                         <input type="text" class="form-control" name="usuario-firstname" id="usuario-firstname"
                             placeholder="Escriba su Nombre" required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
 
@@ -54,6 +58,8 @@
                     <div class="formulario-input">
                         <input type="text" class="form-control" name="usuario-lastname" id="usuario-lastname"
                             placeholder="Escriba su Apellido" required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
                     <div class="error" id="error-usuario-lastname">El Apellido se completa con letras y
@@ -66,7 +72,9 @@
                     <label for="usuario-dni" class="form-label">DNI:</label>
                     <div class="formulario-input">
                         <input type="number" class="form-control" name="usuario-dni" id="usuario-dni"
-                            placeholder="Escriba su Documento" required>
+                            placeholder="Escriba su Documento" pattern="[0-9]*" required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
                     <div class="error" id="error-usuario-dni">Por favor, ingrese un Documento válido. Sin
@@ -80,6 +88,8 @@
                     <div class="formulario-input">
                         <input type="email" class="form-control" name="usuario-email" id="usuario-email"
                             placeholder="mail@mail.com" required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
                     <div class="error" id="error-usuario-email">Por favor, ingrese un correo electrónico
@@ -93,6 +103,8 @@
                     <div class="formulario-input">
                         <input type="password" class="form-control" name="usuario-password" id="usuario-password"
                             required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
                     <div class="error" id="error-usuario-password">La contraseña tiene que ser de 4 a 12 dígitos
@@ -105,6 +117,8 @@
                     <div class="formulario-input">
                         <input type="password" class="form-control" name="usuario-password2" id="usuario-password2"
                             required>
+                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                            class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
                     <div class="error" id="error-usuario-password2">Las contraseñas deben ser iguales.
@@ -120,11 +134,18 @@
                     </select>
                 </div>
 
+                <!-- Muestro formulario correcto  -->
+                <div class="form-valido-campo" id="form-valido-campo">
+                    <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inptus
+                    </p>
+                </div>
+
+                <!-- Enviar y Borrar Datos-->
                 <div class="form-btn-envia">
-                    <button type="submit" class="btn btn-primario">Alta Usuario</button>
-                    <button type="submit" class="btn btn-primario">Modificación Usuario</button>
-                    <button type="submit" class="btn btn-primario">Baja Usuario</button>
-                    <button type="reset" class="btn btn-secundario">Reset Datos</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Alta Usuario</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Modificación Usuario</button>
+                    <button class="form-btn btn" onclick="check_inputs(event)">Baja Usuario</button>
+                    <button type="reset" class="form-btn btn">Reset Datos</button>
                 </div>
 
             </fieldset>
