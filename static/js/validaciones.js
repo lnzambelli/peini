@@ -1,4 +1,4 @@
-// defino el formulario de para ralizar las comparativas, defino variables globales.
+// Defino el formulario de para ralizar las comparativas, defino variables globales. //
 
 const formulario = document.getElementById('formulario-registro');
 const inputs = document.querySelectorAll('#formulario-registro input');
@@ -6,7 +6,7 @@ const campos = {}; // Crebjeto para almacenar las variables booleanas
 // Fin variableas globales
 
 
-// defino las expreciones regurlares para controlar los inputs
+// Defino las expreciones regulares para controlar los inputs //
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
@@ -20,7 +20,7 @@ const expresiones = {
 }
 //Fin expresiones regulares
 
-// Creo variables para validación.
+// Funcion creo variables para validación. //
 function crearVariables() {
 	// Obtener todos los campos de entrada dentro del formulario
 	var camposNombre = formulario.getElementsByTagName("input");
@@ -41,7 +41,7 @@ function crearVariables() {
 // FIn funcion creo variables.
 
 
-// funcion para comparar los true y fals de todos los inputs
+// funcion para comparar los true y false de todos los inputs //
 function control(obj, control2) {
 	console.log(control2);
 	if (control2 === "none") {
@@ -66,7 +66,7 @@ function control(obj, control2) {
 }
 //Fin Funcion de Comparar
 
-// Funcion Verifico sala
+// Funcion Verifico sala //
 function verificarSalaSeleccionada() {
 	var radios = document.getElementsByName('alumno-sala');
 
@@ -85,7 +85,7 @@ function verificarSalaSeleccionada() {
 // Fin Funcion Sala
 
 
-// Validacion Feha de nacimiento y upload configuro el campo en booleano
+// Funciones validacion Feha de nacimiento y upload configuro el campo en booleano //
 document.addEventListener("DOMContentLoaded", function () {
 	// Tomos los elementos de fecha
 	var validoAlumnobirthday = document.getElementById("alumno-birthday");
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Fin Fecha y upload
 
-// Funcion Verifico Turno
+// Funcion Verifico Turno //
 function verificarTurnoSeleccionado() {
 	var radios = document.getElementsByName('alumno-turno');
 
@@ -148,7 +148,7 @@ function verificarTurnoSeleccionado() {
 // Fin Funcion Turno
 
 
-// función Valido campos tipo Flecha
+// función Valido campos tipo Flecha //
 const validarCampo = (expresion, input, campo, formulario) => {
 
 	// debugger;
@@ -175,7 +175,7 @@ const validarCampo = (expresion, input, campo, formulario) => {
 }
 //Fin Funcion
 
-// Funcion valida password 2
+// Funcion valida password 2 //
 const validarPassword2 = () => {
 	var password1 = document.getElementById('alumno-password').value;
 	var password2 = document.getElementById('alumno-password2').value;
@@ -206,7 +206,7 @@ const validarPassword2 = () => {
 // Fin funcion Password
 
 
-// Funcion fecha validar los campos llama a la funcion ValidacionCampo
+// Funcion flecha validar los campos llama a la funcion ValidacionCampo //
 const validarFormulario = (e) => {
 
 	var auxiliar = e.target.name.split("-");
@@ -293,7 +293,7 @@ const validarFormulario = (e) => {
 };
 // Fin Validacion campo
 
-// Muesto nuevo responsable
+// Funcion muestro nuevo responsable //
 document.addEventListener('DOMContentLoaded', function () {
 	var boton = document.getElementById('mostrarFormulario');
 	var formExtra = document.getElementById('responsable2');
@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 //Fin funcion mostrar responsable
 
-// Función restricciones de fechas para alumno y responsables 
+// Función restricciones de fechas para alumno y responsables //
 function setAgeRestrictions(inputId, yearsAgo) {
 	var today = new Date();
 	var pastDate = new Date(today.getFullYear() - yearsAgo, today.getMonth(), today.getDate());
@@ -330,7 +330,7 @@ function setAgeRestrictions(inputId, yearsAgo) {
 }
 // Fin fucncion resticciones
 
-// Función para setear minimos y maximos
+// Función para setear minimos y maximos //
 function initialize() {
 	setAgeRestrictions('alumno-birthday', 3);    // Establece que el alumno debe tener al menos 3 años
 	setAgeRestrictions('alumno-birthday', 6);    // Establece que el alumno debe tener máximo 6 años
@@ -339,7 +339,7 @@ function initialize() {
 }
 // Finaliza funcion control calendario.
 
-// check formulario 
+// Función check formulario //
 const check_inputs = (e) => {
 	e.preventDefault();
 
@@ -388,14 +388,14 @@ const check_inputs = (e) => {
 		setTimeout(() => {
 			document.getElementById('form-mensaje-valido').classList.remove('form-mensaje-valido-activo');
 			document.getElementById('form-valido-campo').classList.remove('form-valido-campo-error');
-		}, 3000000); // queda 3 segundos el mensaje.
+		}, 3000); // queda 3 segundos el mensaje.
 	}
 };
 // fin check fromulario
 
-// Se ejecutan las validaciones 
+// Se ejecutan las validaciones //
 
-// Ejecutar la función solo en la página "registro.html"
+// Ejecutar las funciónes "initialize" y "crearVariables" solo en la página "registro.html"
 document.addEventListener("DOMContentLoaded", function () {
 	// Obtener la URL de la página actual
 	var url = window.location.href;
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// ejecuto la funcion cada vez que hacemos click o escribimos.
+// ejecuto la funcion validar formulario cada vez que hacemos click o escribimos.//
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario); // cada vez que se presiona una tecla ejecuta el codigo
 	input.addEventListener('blur', validarFormulario); // blur cuando le damos click fuera del input se ejecuta.
