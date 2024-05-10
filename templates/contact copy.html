@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/img/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <title>Peini - Formulario de Contacto</title>
+
+</head>
+
+<body>
+    <header></header>
+
+    <img src="https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg"
+        alt="" style="max-height: 300px; width: 100%; object-fit: cover; margin-bottom: 30px;">
+
+    <!-- formulario de contacto -->
+
+    <div class="contact_form">
+
+        <div class="formularioc">
+            <h1 class="h1_contact">Formulario de contacto</h1>
+            <h3 class="h3_contact">Escríbenos y en breve nos pondremos en contacto contigo</h3>
+
+
+            <form action="enviar-formulario.py" method="post">
+
+                <p>
+                    <label for="nombre" class="colocar_nombre form_label_contact">Nombre
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="text" name="introducir_nombre" id="nombre" required="obligatorio"
+                        placeholder="Escribe tu nombre">
+                </p>
+
+                <p>
+                    <label for="email" class="colocar_email form_label_contact">Email
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="email" name="introducir_email" id="email" required="obligatorio"
+                        placeholder="Escribe tu Email">
+                </p>
+              
+                <p>
+                    <label for="telefone" class="colocar_telefono form_label_contact">Teléfono
+                    </label>
+                    <input class="input_contact" type="tel" name="introducir_telefono" id="telefono"
+                        placeholder="Escribe tu número de teléfono">
+                </p>
+
+                <p>
+                    <label for="asunto" class="colocar_asunto form_label_contact">Asunto
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="text" name="introducir_asunto" id="assunto" required="obligatorio"
+                        placeholder="Escribe un asunto">
+                </p>
+
+                <p>
+                    <label for="mensaje" class="colocar_mensaje form_label_contact">Mensaje
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio"
+                        placeholder="Deja aquí tu comentario..."></textarea>
+                </p>
+
+                <button type="submit" name="enviar_formularioc" id="enviar_formularioc">
+                    <p>Enviar</p>
+                </button>
+
+                <p class="aviso">
+                    <span class="obligatorio"> * </span>Los campos son obligatorios.
+                </p>
+
+            </form>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
