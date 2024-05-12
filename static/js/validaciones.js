@@ -349,16 +349,17 @@ const check_inputs = (e) => {
 	// Fin 
 
 	console.log(control(campos))
-	// Lllamo a la funcion Control y le paso el objeto campos y la salida del display del responsable 2
+	// Llamo a la funcion Control y le paso el objeto campos y la salida del display del responsable 2
 	if (control(campos, document.getElementById('responsable2').style.display)) {
 
+		debugger
 
 		// agrego clases al mesaje correcto
 		document.getElementById('form-mensaje-valido').classList.add('form-mensaje-valido-activo');
 		document.getElementById('form-valido-campo').classList.add('form-valido-campo-exito');
-		var mensajeExito = document.querySelector('.form-mensaje-exito');
-		mensajeExito.innerText = 'Formulario enviado exitosamente!';
-		mensajeExito.style.color = 'green';
+		var mensajeExito = document.querySelector('.form-mensaje-valido');
+		mensajeExito.innerText = 'Formulario enviado correctamente';
+		mensajeExito.style.color = '#94be1f';
 
 		// Funcion para que el mensaje quede 5 segundos
 		setTimeout(() => {
