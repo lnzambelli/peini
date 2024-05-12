@@ -385,7 +385,7 @@ const check_inputs = (e) => {
 		document.getElementById('form-valido-campo').classList.add('form-valido-campo-error');
 		var mensajeExito = document.querySelector('.form-mensaje-valido');
 		mensajeExito.innerText = 'Completar formulario correctamente';
-		mensajeExito.style.color = 'red';
+		mensajeExito.style.color = '#dc3545';
 		setTimeout(() => {
 			document.getElementById('form-mensaje-valido').classList.remove('form-mensaje-valido-activo');
 			document.getElementById('form-valido-campo').classList.remove('form-valido-campo-error');
