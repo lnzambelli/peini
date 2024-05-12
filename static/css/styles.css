@@ -245,6 +245,284 @@ body {
     margin-right: 20px;
 }
 
+
+/*......................Estilos index.......................................  */
+
+/* Estilos para el texto del banner */
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: #ffffff;
+    font-size: 40px;
+
+}
+
+/* Estilos img-peini */
+.img-peini {
+    width: 100px;
+}
+
+/* Alineacion */
+.alineacion {
+    text-align: center;
+    align-items: center;
+    margin: 15px;
+}
+
+/* Estilos para el fondo */
+.fondo {
+    background-image: url('../img/fondo-escolar.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    box-shadow: inset 0 0 0 2000px rgb(105, 105, 105, 0.5);
+
+}
+/* Estilos para oferta Academica */
+/* .conten-items-acad{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    
+} */
+
+.items-oferta{
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 20px 10px 10px 20px;
+    padding: 20px;
+}
+
+/* Estilos para los contenedor SALITAS */
+
+.wrap{
+    width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.tarjeta-wrap{
+   margin: 10px;
+}
+
+.tarjeta{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.75);
+}
+
+.tarjeta-front, .tarjeta-back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden; /*Para que funcione tambien en chrom le agrego un prefijo webkit*/
+    backface-visibility: hidden;/*De igual forma son lo mismo*/
+}
+
+.tarjeta-front{
+    width: 100%;
+}
+
+.tarjeta-back{
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+
+
+}
+
+.tarjeta-wrap:hover .tarjeta{
+     transform: rotateY(180deg);
+
+}
+
+.img1{
+    background-image: url(../img/sala3.jpg);
+     background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.img2{
+    background-image: url(../img/sala4.jpg);
+     background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.img3{
+    background-image: url(../img/sala5.jpg);
+     background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.targ1{background: #ff6f00;}
+
+.targ2{background: #ff4081;}
+
+.targ3{background: #ffd500;}
+
+/*...................CSS PLATAFORMA..........................  */
+.perfil{
+    width: 300px;
+    height: 300px;
+    border-radius: 90%;
+    max-width: 100%; 
+    
+}
+
+.perfil-img{
+    width: 100%;
+    height:100%;
+    border-radius: 90%;
+    object-fit: cover;
+}
+
+
+.section-plataforma{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 90px;
+    
+}
+.section-plataforma h1{
+    font-size: 40px;
+    margin: 25px;
+    padding: 25px;
+}
+.cont-datos{
+    display: flex;
+    justify-content: space-between;
+    /* background-size: cover; */
+    align-items: center;
+    margin: 50px;
+    padding: 50px;
+    
+    
+}
+.card li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para seccion APRENDER */
+
+.img-biblioteca{
+    background-image: url(../img/biblioteca.jpg);
+     background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.img-juegos{
+    background-image: url(../img/juegos.jpg);
+     background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+    color: white;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+.tarjeta-back a{
+    font-size: 20px;
+    color: white;
+    content: 25px;
+}
+
+    /* Estilos para footer */
+    .footer {
+        background-color: var(--color-primario);
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-container {
+        margin: 15px;
+    }
+
+
+
+
+    /* Estilos para el logo */
+    #logo {
+        display: flex;
+        justify-content: start;
+        margin: 10px;
+        width: 70px;
+    }
+
+    /* Estilos para el banner ID */
+    #banner {
+        background-image: url('https://blogs.iadb.org/desarrollo-infantil/wp-content/uploads/sites/18/2017/09/lectura-infantil-003.jpg');
+        background-size: cover;
+        /* determina como se ajusta el tamaño de la imagen de fondo para cubrir completamente el contenedor */
+        background-position: center;
+        /* Coloca la imagen en el centro tanto horizontal como vertical el elemento contenedor */
+        height: 600px;
+        box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+        /* Establece una sombra interna actua como un filtro */
+    }
+
+    /* Estilos para el cartel */
+    #cartel {
+        background-image: url('https://img.freepik.com/foto-gratis/marcadores-multicolores-papel-pintado_23-2147843223.jpg?t=st=1715037394~exp=1715040994~hmac=f478e050e8d81bc729716ddfa8b8362bd3d8a51c1606d666f9ea79a85a02445e&w=900');
+        background-size: cover;
+        box-shadow: inset 0 0 0 2000px rgb(0, 0, 0, 0.5);
+        color: black;
+
+    }
+    #fondo {
+        background-image: url('https://img.freepik.com/foto-gratis/marcadores-multicolores-papel-pintado_23-2147843223.jpg?t=st=1715037394~exp=1715040994~hmac=f478e050e8d81bc729716ddfa8b8362bd3d8a51c1606d666f9ea79a85a02445e&w=900');
+        background-size: cover;
+        box-shadow: inset 0 0 0 2000px rgb(255, 255, 255, 0.5);
+        color: black;
+
+    }
+/* ................................................................................... */
+
 /* Estilos para footer */
 .footer {
     background-color: var(--color-primario);

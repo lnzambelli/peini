@@ -1,229 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  
     <!-- CSS Externo -->
-    <link rel="stylesheet" href="./static/css/">
-
+    <link rel="stylesheet" href="./static/css/styles.css">
+  
     <!-- Favicon -->
     <link rel="icon" href="./static/img/favicon.ico">
-
+  
     <title>Peini</title>
-</head>
-
-<body>
-
-    <header>
+  </head>
+  
+  <body>
+  
+    <header class="navbar">
+  
   
       <!--Logo-->
-      <a href="#inicio">
   
-        <img src="./static/img/logo peini.png" class="logo" alt="PEINI" >
+  
+      <a href="">
+  
+        <img src="./static/img/logo peini.png" id="logo" alt="PEINI">
   
       </a>
-      
-      <!--Menu-->
+  
       <nav>
+        <!--Menu-->
+        <div>
   
-        <!--Menu de navegacion-->
-        <ul id="nav-menu">
-          
-          <li class="nav-item"><a href="#inicio"> Inicio </a></li>
-          
-          <li class="nav-item"><a href="./templates/login.html"> Plataforma Educativa </a></li>
-          
-          <li class="nav-item"><a href="#"> Somos PEINI </a></li>
-          
-          <li class="nav-item"><a href="./templates/contact.html"> Contactos </a></li>
+          <!--Menu de navegacion-->
+          <ul>
   
-        </ul>
+            <li><a class="btn btn-secundario" href="#banner"> Inicio </a></li>
+  
+            <li><a class="btn btn-secundario" href="./templates/plataforma.html"> Plataforma Educativa </a></li>
+            <!-- Por ahora vamos a redireccionar a plataforma -->
+  
+            <li><a class="btn btn-secundario" href="#somos-PEINI"> Somos PEINI </a></li>
+  
+            <li><a class="btn btn-secundario" href="./templates/contact.html"> Contactos </a></li>
+  
+          </ul>
   
   
-  
-    </nav>
-  
+      </nav>
+      </div>
     </header>
   
     <main>
   
-      <!--Seccion de inicio-->
+      <!--Seccion de Banner-->
+      <section id="banner" class="banner-text" style="min-height: 100vh;">
   
-      <section>
-  
+        <h1>Bienvenidos a PEINI</h1>
         <div>
-  
-          <img src="./static/img/Foto inicio.jpg" alt="PEINI Inicio">
-  
-        </div>
-  
-        <div>
-  
-          <h1>Bienvenidos a PEINI</h1>
-          <a href="./templates/login.html">Iniciar Sesión</a>
-  
+          <a class="btn btn-primario" href="./templates/login.html">Iniciar Sesión</a>
         </div>
   
       </section>
   
       <!--Seccion de Descrpcion de PEINI-->
-      <section>
+      <section id="somos-PEINI" class="alineacion" style="padding-top: 100px;">
   
-        <!--Caja que contiene toda la seccion-->
+        <!--Imagen de logo-->
         <div>
   
-          <!--Caja que contiene el contenido-->
-          <div>
+          <img class="img-peini" src="./static/img/logo peini.png" alt="PEINI">
   
-            <!--Caja que contiene la imagen y texto-->
-            <div>
+        </div>
   
-              <!--Imagen de logo-->
-              <div>
+        <!--Texto de la caja-->
+        <div>
   
-                <img src="./static/img/logo peini.png" width="90px" height="90px" alt="PEINI">
+          <h2 class="tituloSection">¿Quienes Somos?</h2>
   
-              </div>
+          <p>"En PEIN, nuestro objetivo es crear un entorno educativo enriquecedor y estimulante para los niños en
+            edad preescolar, al mismo tiempo que capacitamos a maestros y padres con las herramientas necesarias
+            para apoyar y participar activamente en el proceso de aprendizaje."
+          </p>
   
-              <!--Texto de la caja-->
-              <div>
-  
-                <h2>¿Quines Somos?</h2>
-  
-                <p>"En nuestra institución, nos dedicamos a ofrecer una educación de alta calidad, centrándonos en las
-                  necesidades de los niños de 3, 4 y 5 años. Contamos con un equipo de profesionales altamente capacitados
-                  que están comprometidos con la primera experiencia educativa de los niños.<br>
-                  En PEIN, nuestro objetivo es crear un entorno educativo enriquecedor y estimulante para los niños en
-                  edad preescolar, al mismo tiempo que capacitamos a maestros y padres con las herramientas necesarias
-                  para apoyar y participar activamente en el proceso de aprendizaje."</p>
-  
-              </div>
-  
-              <!-- Contenedor : Oferta academica-->
-              <div>
-  
-                <h2>Oferta Academica</h2>
-  
-                <div>
-                  <img src="static/img/laboratorio.png" alt="Icono_Laboratorio" height="50px" width="50px">
-                  <h4>Laboratorio</h4>
-                  <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
-                    comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.</p>
-                </div>
-                
-                <div>
-                  <img src="static/img/computadora.png" alt="Icono_EdcDigital" height="50px" width="50px">
-                  <h4>Educacion Digital</h4>
-                  <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
-                    comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.</p>
-                </div>
-                
-                <div>
-                  <img src="static/img/deporte.png" alt="Icono_Deporte" height="50px" width="50px">
-                  <h4>Iniciacion Deportiva</h4>
-                  <p>Contribuye a la formación integral de los niños y las niñas propiciando de modo intencionado y
-                    sistemático, la construcción de saberes corporales, motrices, lúdicos y relacionales.</p>
-                </div>
-               
-                <div>
-                  <img src="static/img/arte.png" alt="Icono_Arte" height="50px" width="50px">
-                  <h4>Arte</h4>
-                  <p> Fomenta la creatividad, la autoexpresión y la apreciación del arte. A través de la exploración de
-                    diferentes medios y la experimentación, los niños desarrollan habilidades motoras finas, pensamiento
-                    visual y confianza en sí mismos.</p>
-                </div>
-                <div>
-                  <img src="static/img/literatura.png" alt="Icono_Literatura" height="50px" width="50px">
-                  <h4>Literatura</h4>
-                  <p>La literatura para nivel inicial es una introducción encantadora al mundo de las historias y la
-                    imaginación para los niños pequeños. A través de cuentos cortos, poesías simples y libros ilustrados,
-                    se promueve el amor por la lectura, se estimula la comprensión del lenguaje y se fomenta la
-                    creatividad.</p>
-                </div>
-                <div>
-                  <img src="static/img/ingles.png" alt="Icono_Ingles" height="50px" width="50px"">
-                  <h4>Ingles</h4>
-                  <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
-                    comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.</p>
-                </div>
-  
-              </div>
-  
-              <!--Contenedor Salitas -->
-              <div>
-                <!--titulo-->
-                <div>
-  
-                  <h2>Salitas</h2>
-  
-                </div>
-                <!--Contenedor de las salitas-->
-  
-                <div>
-  
-                  <div>
-  
-                    <img src="./static/img/salita3.jpg" alt="Salita 3">
-                    <h4>Primera Sección</h4>
-                    <h3>Salita 3</h3>
-  
-                  </div>
-                  <div>
-  
-                    <img src="./static/img/salita4.jpg" alt="Salita 4">
-                    <h4>Segunda Sección</h4>
-                    <h3>Salita 4</h3>
-  
-                  </div>
-                  <div>
-  
-                    <img src="./static/img/salita5.jpg" alt="Salita 5">
-                    <h4>Tercera Sección</h4>
-                    <h3>Salita 5</h3>
-  
-                  </div>
-  
-                  <div>
-  
-                    <img src="static/img/" alt="Icono_Reloj">
-                    <h4>Horarios</h4>
-                    <p>TURNO MAÑANA: 7:45 a 12:15 hs.
-                      TURNO TARDE: 13:00 a 17:30 hs.</p>
-  
-                  </div>
-  
-                </div>
-  
-                <!--Contenedor formulario de contacto-->
-                <div>
-  
-                  <div>
-  
-                    <p>¿Quieres ser parte de nuestro Jardin? ¡Te esperamos!</p>
-                    <a href="./templates/contact.html">Preinscripción</a>
-  
-                  </div>
-  
-                </div>
+        </div>
   
   
-  
-              </div>
-  
+      </section>
   
   
-            </div>
+      <!-- Sección: Oferta academica-->
+      <section>
+            <h2 class="tituloSection">Oferta Academica</h2>
+        <!-- Items Oferta academica -->
+        <div class="conten-items-acad">
+          
+          <!-- primera linea oferta academica -->
+          <div class="items-oferta">
+            <img src="static/img/laboratorio.png" alt="Icono_Laboratorio" height="50px" width="50px">
+            <h4>Laboratorio</h4>
+            <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
+              comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.</p>
+          </div>
   
+          <div class="items-oferta">
+            <img src="static/img/computadora.png" alt="Icono_EdcDigital" height="50px" width="50px">
+            <h4>Educacion Digital</h4>
+            <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
+              comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.</p>
+          </div>
+  
+          <div class="items-oferta">
+            <img src="static/img/deporte.png" alt="Icono_Deporte" height="50px" width="50px">
+            <h4>Iniciacion Deportiva</h4>
+            <p>Contribuye a la formación integral de los niños y las niñas propiciando de modo intencionado y
+              sistemático, la construcción de saberes corporales, motrices, lúdicos y relacionales.</p>
+          </div>
+        </div>
+        
+        <!-- segunda linea oferta academica -->
+        <div>
+          
+          <div class="items-oferta">
+            <img src="static/img/arte.png" alt="Icono_Arte" height="50px" width="50px">
+            <h4>Arte</h4>
+            <p> Fomenta la creatividad, la autoexpresión y la apreciación del arte. A través de la exploración de
+              diferentes medios y la experimentación, los niños desarrollan habilidades motoras finas, pensamiento
+              visual y confianza en sí mismos.</p>
+          </div>
+          
+          <div class="items-oferta">
+            <img src="static/img/literatura.png" alt="Icono_Literatura" height="50px" width="50px">
+            <h4>Literatura</h4>
+            <p>La literatura para nivel inicial es una introducción encantadora al mundo de las historias y la
+              imaginación para los niños pequeños. A través de cuentos cortos, poesías simples y libros ilustrados,
+              se promueve el amor por la lectura, se estimula la comprensión del lenguaje y se fomenta la
+              creatividad.</p>
+          </div>
+  
+          <div class="items-oferta">
+            <img src="static/img/ingles.png" alt="Icono_Ingles" height="50px" width="50px">
+            <h4>Ingles</h4>
+            <p>Motiva a los niños y a las niñas a observar fenómenos y situaciones experimentales de la ciencia
+              comprendiendo el mundo que los rodea con toda su complejidad y generando sus propias conclusiones.
+            </p>
           </div>
   
         </div>
   
   
-  
-  
+        <!--Contenedor SALITAS -->
         <div>
+          <h2 class="tituloSection">Salitas</h2>
   
+          <div class="wrap">
+  
+            <!-- Salita 3 -->
+            <div class="tarjeta-wrap">
+              <div class="tarjeta">
+                <div class="tarjeta-front img1">
+                  <h1>Salita</h1>
+                  <h2> A </h2>
+                </div>
+  
+                <div class="tarjeta-back targ1">
+                  <h1>3</h1>
+                </div>
+  
+              </div>
+            </div>
+  
+            <!-- Salita 4 -->
+            <div class="tarjeta-wrap">
+              <div class="tarjeta ">
+                <div class="tarjeta-front img2">
+                  <h1>Salita</h1>
+                  <h2> B </h2>
+                </div>
+  
+                <div class="tarjeta-back targ2">
+                  <h1>4</h1>
+                </div>
+  
+              </div>
+            </div>
+  
+            <!-- Salita 5 -->
+            <div class="tarjeta-wrap">
+              <div class="tarjeta">
+                <div class="tarjeta-front img3">
+                  <h1>Salita</h1>
+                  <h2> C </h2>
+                </div>
+  
+                <div class="tarjeta-back targ3">
+                  <h1>5</h1>
+                </div>
+  
+              </div>
+            </div>
+  
+          </div>
+  
+  
+          <!-- horarios -->
+          <div class="alineacion">
+  
+            <img src="static/img/reloj.png" alt="Icono_Reloj" width="50px">
+            <h4>Horarios</h4>
+            <p>TURNO MAÑANA: 7:45 a 12:15 hs.
+              TURNO TARDE: 13:00 a 17:30 hs.</p>
+  
+          </div>
+  
+  
+          <!--Contenedor formulario de contacto-->
+          <div id="cartel">
+  
+            <p class="banner-text">¿Quieres ser parte de nuestro Jardin? ¡Te esperamos! </p>
+  
+            <div class="alineacion">
+              <a class="btn btn-primario alineacion" href="./templates/contact.html">Preinscripción</a>
+            </div>
+  
+          </div>
   
         </div>
   
@@ -231,50 +230,60 @@
   
     </main>
   
-    <footer id="footer">
+    <footer class="footer">
   
-          <!--Contenedor logo y descripcion-->
-          <div>
+      <!--Contenedor logo y descripcion-->
+      <div class="footer-container">
   
-            <img src="./static/img/logo peini.png" class="logo" alt="Logo">
-            <h4>Plataforma Educativa de Nivel Inicial.</h4>
+        <img src="./static/img/logo peini.png" class="img-peini" alt="Logo">
+        <h1>PEINI</h1>
+        <h4>Plataforma Educativa de Nivel Inicial.</h4>
   
-          </div>
+      </div>
   
+      </div>
   
-          <!--Contenedor redes sociales-->
-          <div>
-            <a href="https://www.facebook.com/peini.peini.3" target="_blank">
-              <img src="./static/img/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
-              <img src="./static/img/instagram.png" alt="Instagram">
-            </a>
+      <!--Contenedor contactos-->
+      <div class="footer-container">
   
-          </div>
+        <h4>Contactos</h4>
   
-          <!--Contenedor contactos-->
-          <div>
+        <p><strong>Dirección:</strong>P.Sherman Calle Wallaby 42,Sidney</p>
+        <br>
+        <p><strong>Teléfono:</strong>+54 42350001</p>
+        <br>
+        <p><strong>Consultas:</strong><a href="./templates/contact.html"> clik aqui</a></p>
   
-            <h4>Contactos</h4>
+        <!--Contenedor redes sociales-->
+        <div class="footer-container">
   
-            <p><strong>Dirección:</strong>P.Sherman Calle Wallaby 42,Sidney</p>
-            <br>
-            <p><strong>Teléfono:</strong>+54 42350001</p>
-            <br>
-            <p><strong>Consultas:</strong><a href="./templates/contact.html"> clik aqui</a></p>
+          <a href="https://www.facebook.com/peini.peini.3" target="_blank">
+            <img src="./static/img/facebook.png" alt="Facebook" width="25px">
+          </a>
   
-          <!--mapa-->
+          <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
+            <img src="./static/img/instagram.png" alt="Instagram" width="25px">
+          </a>
   
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13137.662945596958!2d-58.4041978046596!3d-34.59364744170856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354c0f3c471f%3A0xf04921b32eb169a8!2sEdificio%20Libertad%2C%20Av.%20Comodoro%20Py%202055%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712671261504!5m2!1ses-419!2sar"
-              width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
   
-          </div>
+      </div>
   
+      <div class="footer-container">
+  
+        <!--mapa-->
+  
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13137.662945596958!2d-58.4041978046596!3d-34.59364744170856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a3354c0f3c471f%3A0xf04921b32eb169a8!2sEdificio%20Libertad%2C%20Av.%20Comodoro%20Py%202055%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1712671261504!5m2!1ses-419!2sar"
+          width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+  
+        </iframe>
+  
+      </div>
   
     </footer>
   
   </body>
-</html>
+  
+  </html>
