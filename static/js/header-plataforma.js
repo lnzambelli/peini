@@ -20,7 +20,9 @@ let miHeader=`
 
       <li><a class="btn btn-secundario btnNav" href="../templates/library.html"> Biblioteca </a></li>
 
-      <li><a class="btn btn-secundario btnNav" href="../templates/register.html"> Gestión de usuarios </a></li>
+      <li><a class="btn btn-secundario btnNav" href="../templates/gestion_usuarios.html"> Gestión de usuarios </a></li>
+
+      <li><a class="btn btn-secundario btnNav" href="../templates/register.html"> Registro de alumnos </a></li>
 
       <li><a class="btn btn-secundario btnNav" href="../templates/contact.html"> Contactos </a></li>
 

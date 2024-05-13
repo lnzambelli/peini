@@ -873,6 +873,10 @@ audio{
         grid-template-columns: 1fr;
     }
 
+    .form-legend {
+        font-size: 14px;
+    }
+
 
     .form-btn-envia {
         grid-column: 1;

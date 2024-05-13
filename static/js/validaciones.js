@@ -352,7 +352,7 @@ const check_inputs = (e) => {
 	// Llamo a la funcion Control y le paso el objeto campos y la salida del display del responsable 2
 	if (control(campos, document.getElementById('responsable2').style.display)) {
 
-		debugger
+		// debugger
 
 		// agrego clases al mesaje correcto
 		document.getElementById('form-mensaje-valido').classList.add('form-mensaje-valido-activo');
