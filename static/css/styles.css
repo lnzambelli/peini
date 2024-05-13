@@ -226,12 +226,32 @@ body {
     justify-content: center;
 }
 
+audio{
+    width: 100%;
+}
+
+.audioLibroText{
+    font-size: 14px;
+    padding: 8px;
+}
+
+@media screen and (max-width: 500px ) {
+    .audioLibroText{
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
 
 /* Estilos para navbar */
 .navbar {
     background-color: var(--color-primario);
     color: #ffffff;
-    padding: 15px 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
 }
 
 .navbar ul {
@@ -243,6 +263,33 @@ body {
 .navbar ul li {
     display: inline;
     margin-right: 20px;
+}
+
+
+
+@media screen and (max-width: 767px){
+    .navbar {
+        background-color: var(--color-primario);
+        color: #ffffff;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 800px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnNav{
+        width: 100%;
+    }
+
 }
 
 
@@ -491,7 +538,6 @@ body {
         display: flex;
         justify-content: start;
         margin: 10px;
-        width: 70px;
     }
 
     /* Estilos para el banner ID */
@@ -846,6 +892,11 @@ body {
         width: 100%;
         margin-top: 10px;
         /* Ajusta este valor según sea necesario */
+    }
+
+    .btnNav{
+        margin: 0;
+        border-radius: 0;
     }
 
 }
