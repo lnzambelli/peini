@@ -575,7 +575,7 @@ audio{
     text-align: center;
 }
 
-/* Estilo Formulario de Resgistro y ABM de Usuario */
+/* Estilo Formulario de Registro y ABM de Usuario */
 
 .formulario {
     display: grid;
@@ -619,7 +619,7 @@ audio{
     right: 10px;
     bottom: 15px;
     z-index: 100;
-    /* Propertie para que quede arriba de otrso elementos */
+    /* Propertie para que quede arriba de otros elementos */
     font-size: 16px;
     opacity: 0;
 }
@@ -760,7 +760,7 @@ audio{
     margin-bottom: 15px;
 }
 
-/* Estilo formulario contacto */
+/* Estilo formulario contacto y login */
 
 .contact_form {
 

@@ -16,17 +16,61 @@
 </head>
 
 <body>
-
     <header class="navbar myHeader"></header>
 
-    <main>
+    <img src="./../static/img/inicio.png" alt="banner" style="height: auto; width: 100%;">
 
-    </main>
+    <!-- formulario de Login -->
 
+    <div class="contact_form">
+
+        <div class="formularioc">
+            <h1 class="h1_contact">Iniciar sesión</h1>
+            
+            <form action="validar-logueo.py" method="post">
+
+                <p>
+                    <label for="DNI" class="colocar_nombre form_label_contact">DNI
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="number" name="introducir_nombre" id="nombre" required="obligatorio"
+                        placeholder="Escriba su DNI">
+                </p>
+
+                <p>
+                    <label for="email" class="colocar_email form_label_contact">E-mail
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="email" name="introducir_email" id="email" required="obligatorio"
+                        placeholder="Escriba su Email">
+                </p>
+              
+                <p>
+                    <label for="password" class="colocar_asunto form_label_contact">Contraseña
+                        <span class="obligatorio">*</span>
+                    </label>
+                    <input class="input_contact" type="password" name="introducir_asunto" id="asunto" required="obligatorio"
+                        placeholder="Ingrese su contraseña">
+                </p>
+
+                <button type="submit" name="enviar_formularioc" id="enviar_formularioc">
+                    <p>Ingresar</p>
+                </button>
+
+                <p class="aviso">
+                    <span class="obligatorio"> * </span>Los campos son obligatorios.
+                </p>
+                <br>
+                <p><a href="#">¿Olvidó su Contraseña?</a></p>
+                <br>
+                <p><a href="/templates/register.html">¿No tiene usuario? Regístrese acá:</a></p>
+                                
+            </form>
+        </div>
+    </div>
     <footer class="footer"></footer>
     <script src="./../static/js/header-plataforma.js"></script>
     <script src="./../static/js/footer.js"></script>
-
 </body>
 
 </html>
