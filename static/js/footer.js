@@ -25,11 +25,11 @@ let miFooter=`
   <div class="">
 
     <a href="https://www.facebook.com/peini.peini.3" target="_blank">
-      <img src="../static/img/facebook.png" alt="Facebook" width="25px">
+      <img src="../static/img/facebook.png" alt="Facebook" width="25">
     </a>
 
     <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
-      <img src="../static/img/instagram.png" alt="Instagram" width="25px">
+      <img src="../static/img/instagram.png" alt="Instagram" width="25">
     </a>
 
   </div>
