@@ -37,3 +37,13 @@ let miHeader=`
 `
 
 document.querySelector(".myHeader").innerHTML=miHeader;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburgerIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    navMenu.classList.toggle('show');
+  });
+});

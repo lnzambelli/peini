@@ -1,5 +1,5 @@
 let miHeader=`
-    <a href="">
+    <a href="./index.html">
         <img src="./static/img/favicon.ico" id="logo" alt="PEINI">
       </a>
       <a href="#" id="hamburger-icon" class="hamburger-icon">
@@ -31,3 +31,13 @@ let miHeader=`
 `
 
 document.querySelector(".myHeader").innerHTML=miHeader;
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburgerIcon.addEventListener('click', (e) => {
+    e.preventDefault();
+    navMenu.classList.toggle('show');
+  });
+});
