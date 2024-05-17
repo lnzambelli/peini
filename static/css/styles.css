@@ -282,12 +282,9 @@ nav{
     display: flex;
     justify-content: end;
 }
-  
+
 
 @media screen and (max-width: 767px){
-    .show{
-        display: none;
-    }
 
     .navbar {
         background-color: var(--color-primario);
@@ -318,12 +315,24 @@ nav{
         border-radius: 8px;
         overflow: hidden;
       }
-}
 
-@media screen and (min-width: 768px) and (max-width: 960px){
+      nav{
+        width: 100%;
+        display: block;
+    }
+
     .show{
         display: none;
     }
+
+    .cont-datos{
+        display: flex;
+        flex-direction: column;
+    }
+      
+}
+
+@media screen and (min-width: 768px) and (max-width: 960px){
     
     .navbar{
         display: flex;
@@ -340,9 +349,9 @@ nav{
 
     .hamburger-icon {
         display: flex;
-      }
+    }
     
-      .nav-menu {
+    .nav-menu {
         display: none; /* Oculto por defecto */
         position: absolute;
         top: 60px;
@@ -351,7 +360,17 @@ nav{
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         border-radius: 8px;
         overflow: hidden;
-      }
+    }
+
+    nav{
+        width: 100%;
+        display: block;
+    }
+
+    .show{
+        display: none;
+    }
+      
 
 }
 
@@ -379,7 +398,6 @@ nav{
 .alineacion {
     text-align: center;
     align-items: center;
-    margin: 15px;
 }
 
 /* Estilos para el fondo */
@@ -412,7 +430,8 @@ nav{
 
 .wrap{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tarjeta-wrap{
@@ -962,6 +981,15 @@ nav{
     .btnNav{
         margin: 0;
         border-radius: 0px;
+    }
+
+    .btn-sesion{
+        width: 50%;
+        font-size: 14px;
+    }
+
+    .tituloBienvenido{
+        font-size: 32px;
     }
 
 }
