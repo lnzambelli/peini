@@ -19,7 +19,7 @@
     <!-- Inconos -->
     <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
 
-    <title>Peini - Gestion Usuarios</title>
+    <title>Peini - Gestión Usuarios</title>
 
 </head>
 
@@ -33,7 +33,7 @@
 
         <form action="crud-usuarios.py" id="formulario-usuario">
             <fieldset class="formulario" id="formulario">
-                <legend class="form-legend">Gestion de Usuarios</legend>
+                <legend class="form-legend">Gestión de Usuarios</legend>
 
                 <!-- Nombre -->
                 <div class="form-formulario" id="form-nombre">
@@ -46,8 +46,8 @@
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
 
-                    <div class="error" id="error-usuario-firstname">El nombre se completa con letras y espacios,
-                        pueden llevar acentos.</div>
+                    <div class="error" id="error-usuario-firstname">El nombre se completa con letras, espacios y
+                        puede contener tildes.</div>
                 </div>
 
                 <!-- Apellido -->
@@ -60,9 +60,8 @@
                             class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
-                    <div class="error" id="error-usuario-lastname">El Apellido se completa con letras y
-                        espacios,
-                        pueden llevar acentos.</div>
+                    <div class="error" id="error-usuario-lastname">El Apellido se completa con letras, espacios y
+                        puede contener tildes.</div>
                 </div>
 
                 <!-- DNI -->
@@ -79,10 +78,10 @@
                         puntos.</div>
                 </div>
 
-                <!-- Maill -->
+                <!-- E-Mail -->
 
                 <div class="form-formulario" id="form-email">
-                    <label for="usuario-email" class="form-label">Mail:</label>
+                    <label for="usuario-email" class="form-label">E-mail:</label>
                     <div class="formulario-input">
                         <input type="email" class="form-control" name="usuario-email" id="usuario-email"
                             placeholder="mail@mail.com" required>
@@ -97,7 +96,7 @@
 
                 <!-- Password -->
                 <div class="form-formulario" id="form-password">
-                    <label for="usuario-password" class="form-label">Contraseña</label>
+                    <label for="usuario-password" class="form-label">Contraseña:</label>
                     <div class="formulario-input">
                         <input type="password" class="form-control" name="usuario-password" id="usuario-password"
                             required>
@@ -105,13 +104,13 @@
                             class="icono-svg formulario__validacion-estado"> -->
                         <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                     </div>
-                    <div class="error" id="error-usuario-password">La contraseña tiene que ser de 4 a 12 dígitos
+                    <div class="error" id="error-usuario-password">La contraseña debe contener entre 4 y 12 dígitos
                     </div>
                 </div>
 
                 <!-- Password Control -->
                 <div class="form-formulario" id="form-password2">
-                    <label for="usuario-password2" class="form-label">Repetir Contraseña</label>
+                    <label for="usuario-password2" class="form-label">Repetir Contraseña:</label>
                     <div class="formulario-input">
                         <input type="password" class="form-control" name="usuario-password2" id="usuario-password2"
                             required>
@@ -125,7 +124,7 @@
 
                 <!-- Perdil de usuario -->
                 <div class="form-formulario" id="form-perfil">
-                    <label for="usuario-perfil" class="form-label">Perfil de Usuario</label>
+                    <label for="usuario-perfil" class="form-label">Perfil de Usuario:</label>
                     <select name="usuario-perfil" id="usuario-perfil" class="form-control">
                         <option value="form-select">Maestra/o</option>
                         <option value="form-select">Admin</option>

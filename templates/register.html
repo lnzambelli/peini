@@ -30,7 +30,7 @@
 
             <fieldset class="formulario-registro" id="formulario-registro">
 
-                <legend class="form-legend">FORMULARIO DE REGISTRO</legend>
+                <legend class="form-legend">Formulario de Registro</legend>
 
                 <!-- Registro de Alumno/a -->
                 <h2>Registro Alumno/a</h2>
@@ -45,8 +45,8 @@
                                 placeholder="Escriba su Nombre">
                             <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                         </div>
-                        <div class="error" id="error-alumno-nombre">El nombre se completa con letras y espacios,
-                            pueden llevar acentos.</div>
+                        <div class="error" id="error-alumno-nombre">El nombre se completa con letras, espacios y
+                            puede contener tildes.</div>
 
                     </div>
 
@@ -58,9 +58,8 @@
                                 placeholder="Escriba su Apellido">
                             <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                         </div>
-                        <div class="error" id="error-alumno-apellido">El Apellido se completa con letras y
-                            espacios,
-                            pueden llevar acentos.</div>
+                        <div class="error" id="error-alumno-apellido">El Apellido se completa con letras, espacios y
+                            pueden contener tildes.</div>
                     </div>
 
                     <!-- DNI Alumno -->
@@ -99,7 +98,7 @@
 
                     <!-- Turno -->
                     <div class="form-formulario-alumno">
-                        <label class="form-label">Turno:</label>
+                        <label class="form-label">Turno: </label>
                         <div class="form-control">
                             <input type="radio" id="turno-manana" name="alumno-turno" value="1" required>
                             <label for="turno-manana">Mañana</label>
@@ -112,18 +111,18 @@
 
                     <!-- Password Alumno -->
                     <div class="form-formulario-alumno validacion-reset" id="form-password-alumno">
-                        <label for="alumno-password" class="form-label">Contraseña</label>
+                        <label for="alumno-password" class="form-label">Contraseña:</label>
                         <div class="formulario-input">
                             <input type="password" class="form-control" name="alumno-password" id="alumno-password">
                             <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                         </div>
-                        <div class="error" id="error-alumno-password">La contraseña tiene que ser de 4 a 12 dígitos
+                        <div class="error" id="error-alumno-password">La contraseña debe contener entre 4 y 12 dígitos
                         </div>
                     </div>
 
                     <!-- Password Control alumno -->
                     <div class="form-formulario-alumno validacion-reset" id="form-password2-alumno">
-                        <label for="alumno-password2" class="form-label">Contraseña Repetir</label>
+                        <label for="alumno-password2" class="form-label">Repetir Contraseña:</label>
                         <div class="formulario-input">
                             <input type="password" class="form-control" name="alumno-password2" id="alumno-password2">
                             <i class="icono-svg form-alidacion-estado fa-regular fa-circle-xmark"></i>
@@ -159,9 +158,8 @@
                                     id="responsable-nombre" placeholder="Escriba su Nombre">
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-nombre">El nombre se completa con letras y
-                                espacios,
-                                pueden llevar acentos.</div>
+                            <div class="error" id="error-responsable-nombre">El nombre se completa con letras, espacios y
+                                puede contener tildes.</div>
                         </div>
 
                         <!-- Apellido responsable -->
@@ -172,9 +170,8 @@
                                     id="responsable-apellido" placeholder="Escriba su Apellido">
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-apellido">El Apellido se completa con letras y
-                                espacios,
-                                pueden llevar acentos.</div>
+                            <div class="error" id="error-responsable-apellido">El Apellido se completa con letras, espacios y
+                                puede contener tildes.</div>
                         </div>
 
                         <!-- DNI responsable -->
@@ -210,13 +207,13 @@
 
                         <!-- Codigo Postal Responsable-->
                         <div class="form-formulario-responsable validacion-reset" id="form-codigopostal-responsable">
-                            <label for="responsable-codigopostal" class="form-label">Codigo Postal:</label>
+                            <label for="responsable-codigopostal" class="form-label">Código Postal:</label>
                             <div class="formulario-input">
                                 <input type="text" class="form-control" name="responsable-codigopostal"
                                     id="responsable-codigopostal" placeholder="Escriba su Codigo Postal." required>
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-codigopostal">Por favor, ingrese un codigo postal.
+                            <div class="error" id="error-responsable-codigopostal">Por favor, ingrese un código postal.
                             </div>
                         </div>
 
@@ -233,19 +230,19 @@
 
                         <!-- Telefono Responsable  -->
                         <div class="form-formulario-responsable validacion-reset" id="form-telefono-responsable">
-                            <label for="responsable-telefono" class="form-label">Telefono:</label>
+                            <label for="responsable-telefono" class="form-label">Teléfono:</label>
                             <div class="formulario-input">
                                 <input type="number" class="form-control" name="responsable-telefono"
                                     id="responsable-telefono" placeholder="Escriba su Telefono" required>
                                 <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                             </div>
-                            <div class="error" id="error-responsable-telefono">Por favor, ingrese un Telefono válido.
+                            <div class="error" id="error-responsable-telefono">Por favor, ingrese un teléfono válido.
                             </div>
                         </div>
 
                         <!-- Maill Responsable -->
                         <div class="form-formulario-responsable validacion-reset" id="form-email-responsable">
-                            <label for="responsable-email" class="form-label">Mail:</label>
+                            <label for="responsable-email" class="form-label">E-mail:</label>
                             <div class="formulario-input">
                                 <input type="email" class="form-control" name="responsable-email" id="responsable-email"
                                     placeholder="mail@mail.com">
@@ -280,9 +277,8 @@
                                         id="responsable2-nombre" placeholder="Escriba su Nombre">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-nombre">El nombre se completa con letras y
-                                    espacios,
-                                    pueden llevar acentos.</div>
+                                <div class="error" id="error-responsable2-nombre">El nombre se completa con letras, espacios y
+                                    puede contener tildes.</div>
                             </div>
 
                             <!-- Apellido responsable-2 -->
@@ -293,9 +289,8 @@
                                         id="responsable2-apellido" placeholder="Escriba su Apellido">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-apellido">El Apellido se completa con letras y
-                                    espacios,
-                                    pueden llevar acentos.</div>
+                                <div class="error" id="error-responsable2-apellido">El Apellido se completa con letras, espacios y
+                                    pueden contener tildes.</div>
                             </div>
 
                             <!-- DNI responsable-2 -->
@@ -306,9 +301,8 @@
                                         id="responsable2-dni" placeholder="Escriba su Documento">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-dni">Por favor, ingrese un Documento válido.
-                                    Sin
-                                    puntos.</div>
+                                <div class="error" id="error-responsable2-dni">Por favor, ingrese un documento válido.
+                                    Sin puntos.</div>
                             </div>
 
                             <!-- Fecha de nacimiento Rsponsable -->
@@ -334,13 +328,13 @@
                             <!-- Codigo Postal responsable-2-->
                             <div class="form-formulario-responsable-2 validacion-reset"
                                 id="form-codigopostal-responsable2">
-                                <label for="responsable2-codigopostal" class="form-label">Codigo Postal:</label>
+                                <label for="responsable2-codigopostal" class="form-label">Código Postal:</label>
                                 <div class="formulario-input">
                                     <input type="text" class="form-control" name="responsable2-codigopostal"
                                         id="responsable2-codigopostal" placeholder="Escriba su Codigo Postal.">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-codigopostal">Por favor, ingrese un codigo
+                                <div class="error" id="error-responsable2-codigopostal">Por favor, ingrese un código
                                     postal.</div>
                             </div>
 
@@ -358,13 +352,13 @@
 
                             <!-- Telefono responsable-2  -->
                             <div class="form-formulario-responsable-2 validacion-reset" id="form-telefono-responsable2">
-                                <label for="responsable2-telefono" class="form-label">Telefono:</label>
+                                <label for="responsable2-telefono" class="form-label">Teléfono:</label>
                                 <div class="formulario-input">
                                     <input type="number" class="form-control" name="responsable2-telefono"
                                         id="responsable2-telefono" placeholder="Escriba su Telefono">
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
-                                <div class="error" id="error-responsable2-telefono">Por favor, ingrese un Telefono
+                                <div class="error" id="error-responsable2-telefono">Por favor, ingrese un teléfono
                                     válido.</div>
                             </div>
 
@@ -377,8 +371,7 @@
                                     <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
                                 </div>
                                 <div class="error" id="error-responsable2-email">Por favor, ingrese un correo
-                                    electrónico
-                                    válido.</div>
+                                    electrónico válido.</div>
 
                             </div>
                         </div>
@@ -391,7 +384,7 @@
 
                 <!-- Muestro formulario correcto  -->
                 <div class="form-valido-campo" id="form-valido-campo">
-                    <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inptus
+                    <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inputs
                     </p>
                 </div>
 
