@@ -3,7 +3,9 @@ let miFooter=`
 <div class="footer-container">
 
   <img src="./static/img/icono.png" class="img-peini" alt="Logo">
+  <br>
   <h1>PEINI</h1>
+  <br>
   <h4>Plataforma Educativa Interactiva de Nivel Inicial</h4>
 
 </div>
@@ -14,13 +16,13 @@ let miFooter=`
 <div class="footer-container">
 
   <h4>Contactos</h4>
-
+  <br>
   <p><strong>Dirección: </strong>P. Sherman Calle Wallaby 42, Sidney</p>
   <br>
   <p><strong>Teléfono: </strong>(+5411) 4235-0001</p>
   <br>
-  <p><strong>Consultas: </strong><a href="./templates/contact.html">Clic aquí</a></p>
-
+  <p><strong>Consultas: </strong><a href="../templates/contact.html">Clic aquí</a></p>
+  <br>
   <!--Contenedor redes sociales-->
   <div class="">
 
