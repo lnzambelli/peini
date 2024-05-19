@@ -23,18 +23,19 @@ let miFooter=`
   <br>
   <p><strong>Consultas: </strong><a href="../templates/contact.html">Clic aquí</a></p>
   <br>
+  
   <!--Contenedor redes sociales-->
-  <div class="">
+  
+  <div class="social-links">
+  <a href="https://www.facebook.com/peini.peini.3" target="_blank">
+    <img src="../static/img/facebook.png" alt="Facebook" width="25">
+  </a>
 
-    <a href="https://www.facebook.com/peini.peini.3" target="_blank">
-      <img src="../static/img/facebook.png" alt="Facebook" width="25">
-    </a>
+  <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
+    <img src="../static/img/instagram.png" alt="Instagram" width="25">
+  </a>
+</div>
 
-    <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
-      <img src="../static/img/instagram.png" alt="Instagram" width="25">
-    </a>
-
-  </div>
 
 </div>
 
