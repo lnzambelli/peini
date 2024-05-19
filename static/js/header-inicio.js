@@ -12,7 +12,7 @@ let miHeader=`
         <!--Menu-->
         <div>
   
-          <!--Menu de navegacion-->
+          <!--Menu de navegación-->
           <ul>
   
             <li><a class="btn btn-secundario btnNav" href="#banner"> Inicio </a></li>
