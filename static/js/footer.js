@@ -36,7 +36,6 @@ let miFooter=`
   </a>
 </div>
 
-
 </div>
 
 <div class="footer-container footer-map">

@@ -1,5 +1,5 @@
 let miFooter=`
-<!--Contenedor logo y descripcion-->
+<!--Contenedor logo y descripción-->
 <div class="footer-container">
 
   <img src="./static/img/icono.png" class="img-peini" alt="Logo">
@@ -21,16 +21,18 @@ let miFooter=`
   <br>
   <p><strong>Teléfono: </strong>(+5411) 4235-0001</p>
   <br>
-  <p><strong>Consultas: </strong><a href="../templates/contact.html">Clic aquí</a></p>
+  <p><strong>Consultas: </strong><a href="./templates/contact.html">Clic aquí</a></p>
   <br>
+
   <!--Contenedor redes sociales-->
+
   <div class="social-links">
   <a href="https://www.facebook.com/peini.peini.3" target="_blank">
-    <img src="../static/img/facebook.png" alt="Facebook" width="25">
+    <img src="./static/img/facebook.png" alt="Facebook" width="25">
   </a>
 
   <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
-    <img src="../static/img/instagram.png" alt="Instagram" width="25">
+    <img src="./static/img/instagram.png" alt="Instagram" width="25">
   </a>
 </div>
 
