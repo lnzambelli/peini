@@ -28,11 +28,11 @@ let miFooter=`
   
   <div class="social-links">
   <a href="https://www.facebook.com/peini.peini.3" target="_blank">
-    <img src="../static/img/facebook.png" alt="Facebook" width="25">
+    <img src="../static/img/facebook.png" alt="Facebook" width="40">
   </a>
 
   <a href="https://www.instagram.com/peini.peini.3/" target="_blank">
-    <img src="../static/img/instagram.png" alt="Instagram" width="25">
+    <img src="../static/img/instagram.png" alt="Instagram" width="40">
   </a>
 </div>
 

@@ -391,7 +391,8 @@ nav{
 
 /* Estilos img-peini */
 .img-peini {
-    width: 100px;
+    width: 25%;
+    height: auto;
 }
 
 /* Alineacion */
@@ -1028,6 +1029,6 @@ nav{
   }
   
   .social-links img:hover {
-    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el mouse */
+    transform: scale(1.5); /* Aumenta el tamaño del ícono al pasar el mouse */
   }
   
