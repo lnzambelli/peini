@@ -10,7 +10,7 @@ const campos = {}; // Crebjeto para almacenar las variables booleanas
 const expresiones = {
 	nombre: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
 	apellido: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-	direccion: /^[a-zA-Z0-9\_\-]{4,16}$/, // Esta expresión regular garantizará que haya al menos dos letras y dos dígitos en la cadena, contando los espacios, y que la longitud total de la cadena no supere los 20 caracteres.
+	direccion: /^[a-zA-Z0-9\s_\-]{4,20}$/, // Letras, numeros y espacios en blanco minimo 4 careacteres maximo 20 contando los blancos
 	codigopostal: /^.{4,10}$/, // 4 a 10 digitos.
 	ciudad: /^[a-zA-Z0-9]{4,20}$/, // 4 a 20 digitos.
 	dni: /^.{6,14}$/, // 6 a 14 digitos.
