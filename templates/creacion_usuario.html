@@ -19,7 +19,7 @@
     <!-- Inconos -->
     <script src="https://kit.fontawesome.com/86dbb3fae5.js" crossorigin="anonymous"></script>
 
-    <title>Peini - Gestión Usuarios</title>
+    <title>Peini - Creación de Usuarios</title>
 
 </head>
 
@@ -33,7 +33,7 @@
 
         <form action="crud-usuarios.py" id="formulario-usuario">
             <fieldset class="formulario" id="formulario">
-                <legend class="form-legend">Gestión de Usuarios</legend>
+                <legend class="form-legend">Creción de Usuarios</legend>
 
                 <!-- Nombre -->
                 <div class="form-formulario" id="form-nombre">
@@ -132,12 +132,12 @@
                 </div>
 
                 <!-- Subir archivos -->
-                <div class="form-formulario validacion-reset" id="form-upload-usuario">
-                    <label for="archivo-upload-usuario" class="form-label">Subir Foto:</label>
+                <div class="form-formulario" id="form-archivo">
+                    <label for="usuario-archivo" class="form-label">Subir Foto:</label>
                     <div class="formulario-input">
-                        <input type="file" class="form-control" name="archivo-upload-usuario" id="archivo-upload-usuario" required>
+                        <input type="file" class="form-control" name="usuario-archivo" id="usuario-archivo" required>
                     </div>
-                    <div class="error" id="error-archivo-upload-usuario">Por favor, seleccione un archivo válido.</div>
+                    <div class="error" id="error-archivo-usuario-archivo">Por favor, seleccione un archivo válido.</div>
                 </div>
 
                 <!-- Muestro formulario correcto  -->
@@ -149,12 +149,10 @@
 
                 <!-- Enviar y Borrar Datos-->
                 <div class="form-btn-envia">
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Alta Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Modificación
-                        Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Baja Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Consulta Usuario</button>
-                    <button type="reset" class="form-btn btn btn-secundario">Reset Datos</button>
+                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Creación de Usuario</button>
+                    <button type="reset" class="form-btn btn btn-secundario" onclick="resetFormulario()">Reset Datos</button>
+                    <button class="form-btn btn btn-primario" onclick="location.href='gestion_usuario.html'">Gestión de Usuario</button>
+
                 </div>
 
             </fieldset>
