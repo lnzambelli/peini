@@ -10,7 +10,6 @@ const expresiones = {
 	dni: /^.{6,14}$/, // 4 a 12 digitos.
 	password: /^.{4,12}$/, // 4 a 12 digitos.
 	mail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-
 }
 
 const campos = {
@@ -18,41 +17,58 @@ const campos = {
 	apellido: false,
 	dni: false,
 	password: false,
-	email: false
-
+	email: false,
+	archivo: false
 }
 
 // Funcion para reiniciar los campos en false
 function reiniciarCampos() {
-    for (let campo in campos) {
-        campos[campo] = false;
-    }
+	for (let campo in campos) {
+		campos[campo] = false;
+	}
 }
 
 //fin funcion
 
 // función tipo flecha de validacion
 
+// Función tipo flecha de validación
 const validarCampo = (expresion, input, campo) => {
-	//se llama a la funcion test y devuelve un booleano comparando con la expresion que definimos
-	if (expresion.test(input.value)) {
+	// Si es el campo de archivo, validamos que haya un archivo seleccionado
+	if (campo === 'archivo') {
+		if (input.files.length > 0) {
+			document.getElementById(`form-${campo}`).classList.remove('form-formulario-error');
+			document.getElementById(`form-${campo}`).classList.add('form-formulario-correcto');
+			document.querySelector(`#form-${campo} .error`).classList.remove('error-activo');
+			campos[campo] = true;
 
-		document.getElementById(`form-${campo}`).classList.remove('form-formulario-error');
-		document.getElementById(`form-${campo}`).classList.add('form-formulario-correcto');
-		document.querySelector(`#form-${campo} i`).classList.remove('fa-circle-xmark');
-		document.querySelector(`#form-${campo} i`).classList.add('fa-circle-check');
-		document.querySelector(`#form-${campo} .error`).classList.remove('error-activo');
-		campos[campo] = true;
 
+		} else {
+			document.getElementById(`form-${campo}`).classList.remove('form-formulario-correcto');
+			document.getElementById(`form-${campo}`).classList.add('form-formulario-error');
+			document.querySelector(`#form-${campo} .error`).classList.add('error-activo');
+			campos[campo] = false;
+		}
 	} else {
-		document.getElementById(`form-${campo}`).classList.remove('form-formulario-correcto');
-		document.getElementById(`form-${campo}`).classList.add('form-formulario-error');
-		document.querySelector(`#form-${campo} i`).classList.remove('fa-circle-check');
-		document.querySelector(`#form-${campo} i`).classList.add('fa-circle-xmark');
-		document.querySelector(`#form-${campo} .error`).classList.add('error-activo');
-		campos[campo] = false;
-	}
+		// Para otros campos, usamos la expresión regular
+		if (expresion.test(input.value)) {
+			document.getElementById(`form-${campo}`).classList.remove('form-formulario-error');
+			document.getElementById(`form-${campo}`).classList.add('form-formulario-correcto');
+			document.querySelector(`#form-${campo} i`).classList.remove('fa-circle-xmark');
+			document.querySelector(`#form-${campo} i`).classList.add('fa-circle-check');
+			document.querySelector(`#form-${campo} .error`).classList.remove('error-activo');
+			campos[campo] = true;
 
+		} else {
+			document.getElementById(`form-${campo}`).classList.remove('form-formulario-correcto');
+			document.getElementById(`form-${campo}`).classList.add('form-formulario-error');
+			document.querySelector(`#form-${campo} .error`).classList.add('error-activo');
+			document.querySelector(`#form-${campo} i`).classList.remove('fa-circle-check');
+			document.querySelector(`#form-${campo} i`).classList.add('fa-circle-xmark');
+			document.querySelector(`#form-${campo} .error`).classList.add('error-activo');
+			campos[campo] = false;
+		}
+	}
 }
 
 //Fin Funcion
@@ -86,6 +102,32 @@ const validarPassword2 = () => {
 }
 
 // Fin funcion Password
+
+// Funcion reset formulario
+
+function resetFormulario() {
+	// Reset del formulario si termina exitoso.
+	document.getElementById("formulario-usuario").reset();
+
+	// Borra la clase de formulario correcto para volver a la clase inicial.
+	document.querySelectorAll('.form-formulario').forEach((elemento) => {
+		elemento.classList.remove('form-formulario-correcto');
+		elemento.classList.remove('form-formulario-error');
+
+		// Eliminar la clase 'error-activo' de los elementos hijos con clase 'error'
+		elemento.querySelectorAll('.error').forEach((errorElemento) => {
+			errorElemento.classList.remove('error-activo');
+			console.log('Clase "error-activo" eliminada de:', errorElemento);
+
+		});
+	});
+
+
+	// Reinicia los campos, los pone en false.
+	reiniciarCampos();
+}
+
+// Fin reset Formulario
 
 
 // Funcion fecha validar los campos llama a la funcion ValidacionCampo
@@ -127,6 +169,11 @@ const validarFormulario = (e) => {
 
 			break;
 
+		case "usuario-archivo":
+			validarCampo(expresiones.archivo, e.target, 'archivo');
+
+			break;
+
 	}
 
 }
@@ -143,10 +190,10 @@ inputs.forEach((input) => {
 const check_inputs = (e) => {
 	e.preventDefault();
 
-	if (campos.nombre && campos.apellido && campos.dni && campos.password && campos.email ) {
+	if (campos.nombre && campos.apellido && campos.dni && campos.password && campos.email && campos.archivo) {
 		// formulario.reset();
 		console.log("Funciona la función");
-		
+
 		// agrego clases al mesaje correcto
 		document.getElementById('form-mensaje-valido').classList.add('form-mensaje-valido-activo');
 		document.getElementById('form-valido-campo').classList.add('form-valido-campo-exito');
@@ -160,15 +207,8 @@ const check_inputs = (e) => {
 			document.getElementById('form-valido-campo').classList.remove('form-valido-campo-exito');
 		}, 3000); // queda 3 segundos el mensaje
 
-		// Reset del formulario si termina exitoso.
-		document.getElementById("formulario-usuario").reset();
-		
-		// Borra la clase de formulario correcto para volver a la case inicial.
-		document.querySelectorAll('.form-formulario').forEach((elemento) => {
-			elemento.classList.remove('form-formulario-correcto');
-		});
-		// reinicia los campos los pone en false.
-		reiniciarCampos();
+		// reinicia formulario si todos esta ok
+		resetFormulario();
 
 
 	} else {
@@ -184,4 +224,9 @@ const check_inputs = (e) => {
 	}
 };
 
-// fin cheque coampo
+// Valido los cambioes en el campo al campo de archivo
+document.getElementById('usuario-archivo').addEventListener('change', (e) => {
+	validarCampo(expresiones.archivo, e.target, 'archivo');
+});
+
+// fin cheque campo
