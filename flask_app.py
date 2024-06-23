@@ -1,7 +1,8 @@
-#--------------------------------------------------------------------
 # Instalar con pip install Flask
-from flask import Flask, request, jsonify, render_template
+from flask import Flask
 from flask import request
+from flask import jsonify
+from flask import render_template
 
 # Instalar con pip install flask-cors
 from flask_cors import CORS
@@ -12,45 +13,54 @@ import mysql.connector
 # Si es necesario, pip install Werkzeug
 from werkzeug.utils import secure_filename
 
-# No es necesario instalar, es parte del sistema standard de Python
+# Es parte del sistema standard de Python (no es necesario instalar)
 import os
 import time
 
-
-#Creamos una instancia de la aplicación Flask
+# Creamos una instancia de la aplicación Flask
 app = Flask(__name__)
-CORS(app)  # Se habilita CORS para la aplicación Flask. CORS es una característica de seguridad en los navegadores que restringe cómo los recursos en una página web pueden ser solicitados desde otro dominio distinto del que sirvió la página original. Al habilitar CORS, se permite que los recursos de la aplicación web sean accesibles desde otros dominios, lo cual es necesario en muchos casos, como cuando se desarrolla una API que necesita ser consumida desde diferentes dominios.
+
+# Se habilita CORS para la aplicación Flask.
+# CORS es una característica de seguridad en los navegadores que restringe cómo los recursos en una página web
+# pueden ser solicitados desde otro dominio distinto del que sirvió la página original.
+# Al habilitar CORS, se permite que los recursos de la aplicación web sean accesibles desde otros dominios,
+# lo cual es necesario en muchos casos, como cuando se desarrolla una API que necesita ser consumida desde diferentes dominios.
+CORS(app)
 
 @app.route('/')
 def index():
     return 'Hola, mundo! Esta es mi primera aplicación Flask en PythonAnywhere.'
 
 # -------------------------------------------------------------------
-# Definimos la clase Catalogo
+# Definimos la clase peini
 # -------------------------------------------------------------------
-#--------------------------------------------------------------------
-# class Usuarios:
-#     #----------------------------------------------------------------
-#     # Constructor de la clase
-#     def __init__(self, host, user, password, database):
+
+class peini:
+
+# Constructor de la clase
+
+     def __init__(self, host, user, password, database):
+
 #         # Primero, establecemos una conexión sin especificar la base de datos
-#         self.conn = mysql.connector.connect(
-#             host=peini.mysql.pythonanywhere-services.com,
-#             user=peini,
-#             password=CaCTeam1PADB
-#         )
-#         self.cursor = self.conn.cursor()
+         self.conn = mysql.connector.connect(
+             host='peini.mysql.pythonanywhere-services.com',
+             user='peini',
+             password='CaCTeam1PADB',
+             database='peini$peini'
+             
+         )
+         self.cursor = self.conn.cursor()
 
 #         # Intentamos seleccionar la base de datos
-#         try:
-#             self.cursor.execute(f"USE {database}")
-#         except mysql.connector.Error as err:
+         try:
+             self.cursor.execute(f"USE {database}")
+         except mysql.connector.Error as err:
 #             # Si la base de datos no existe, la creamos
-#             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
-#                 self.cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database}")
-#                 self.conn.database = database
-#             else:
-#                 raise err
+             if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
+                 self.cursor.execute(f"CREATE DATABASE IF NOT EXISTS {database}")
+                 self.conn.database = database
+             else:
+                 raise err
 
 #         # Una vez que la base de datos está establecida, creamos la tabla si no existe
 #         self.cursor.execute('''CREATE TABLE IF NOT EXISTS productos (
