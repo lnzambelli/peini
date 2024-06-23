@@ -29,15 +29,15 @@ def index():
 # Definimos la clase Catalogo
 # -------------------------------------------------------------------
 #--------------------------------------------------------------------
-# class Catalogo:
+# class Usuarios:
 #     #----------------------------------------------------------------
 #     # Constructor de la clase
 #     def __init__(self, host, user, password, database):
 #         # Primero, establecemos una conexión sin especificar la base de datos
 #         self.conn = mysql.connector.connect(
-#             host=host,
-#             user=user,
-#             password=password
+#             host=peini.mysql.pythonanywhere-services.com,
+#             user=peini,
+#             password=CaCTeam1PADB
 #         )
 #         self.cursor = self.conn.cursor()
 
