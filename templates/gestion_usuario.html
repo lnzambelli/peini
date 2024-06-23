@@ -31,142 +31,169 @@
 
         <img src="./../static/img/inicio.png" alt="banner" style="height: auto; width: 100%;">
 
-        <form action="crud-usuarios.py" id="formulario-usuario">
-            <fieldset class="formulario" id="formulario">
-                <legend class="form-legend">Gestión de Usuarios</legend>
+        <section style="padding: 16px;">
+            <div style="display: flex; gap: 16px; align-items: center; align-content: center;">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre..." class="input" style="margin-bottom: 0px;">
+                <button class="btn btn-primario" onclick="location.href='creacion_usuario.html'" style="width: 150px;">Alta de Usuario</button>
+            </div>
+            <table id="dataTable">
+              <thead>
+                <tr>
+                  <th>Avatar</th>
+                  <th>Nombre</th>
+                  <th>DNI</th>
+                  <th>Email</th>
+                  <th>Perfil</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Agregamos los datos desde lista-usuarios.js -->
+              </tbody>
+            </table>
+        </section>
 
-                <!-- Nombre -->
-                <div class="form-formulario" id="form-nombre">
-                    <label for="usuario-firstname" class="form-label">Nombre:</label>
-                    <div class="formulario-input">
-                        <input type="text" class="form-control" name="usuario-firstname" id="usuario-firstname"
-                            placeholder="Escriba su Nombre" required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="formTitle">Alta de Usuario</h2>
+              <form action="crud-usuarios.py" class="userForm" id="formulario-usuario">
+                <fieldset class="formulario" id="formulario">
+                    <legend class="form-legend">Modificación de Usuarios</legend>
+    
+                    <!-- Nombre -->
+                    <div class="form-formulario" id="form-nombre">
+                        <label for="usuario-firstname" class="form-label">Nombre:</label>
+                        <div class="formulario-input">
+                            <input type="text" class="form-control" name="usuario-firstname" id="usuario-firstname"
+                                placeholder="Escriba su Nombre" required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+    
+                        <div class="error" id="error-usuario-firstname">El nombre se completa con letras, espacios y
+                            puede contener tildes.</div>
                     </div>
-
-                    <div class="error" id="error-usuario-firstname">El nombre se completa con letras, espacios y
-                        puede contener tildes.</div>
-                </div>
-
-                <!-- Apellido -->
-                <div class="form-formulario" id="form-apellido">
-                    <label for="usuario-lastname" class="form-label">Apellido:</label>
-                    <div class="formulario-input">
-                        <input type="text" class="form-control" name="usuario-lastname" id="usuario-lastname"
-                            placeholder="Escriba su Apellido" required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+    
+                    <!-- Apellido -->
+                    <div class="form-formulario" id="form-apellido">
+                        <label for="usuario-lastname" class="form-label">Apellido:</label>
+                        <div class="formulario-input">
+                            <input type="text" class="form-control" name="usuario-lastname" id="usuario-lastname"
+                                placeholder="Escriba su Apellido" required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-usuario-lastname">El Apellido se completa con letras, espacios y
+                            puede contener tildes.</div>
                     </div>
-                    <div class="error" id="error-usuario-lastname">El Apellido se completa con letras, espacios y
-                        puede contener tildes.</div>
-                </div>
-
-                <!-- DNI -->
-                <div class="form-formulario" id="form-dni">
-                    <label for="usuario-dni" class="form-label">DNI:</label>
-                    <div class="formulario-input">
-                        <input type="number" class="form-control" name="usuario-dni" id="usuario-dni"
-                            placeholder="Escriba su Documento" required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+    
+                    <!-- DNI -->
+                    <div class="form-formulario" id="form-dni">
+                        <label for="usuario-dni" class="form-label">DNI:</label>
+                        <div class="formulario-input">
+                            <input type="number" class="form-control" name="usuario-dni" id="usuario-dni"
+                                placeholder="Escriba su Documento" required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-usuario-dni">Por favor, ingrese un Documento válido. Sin
+                            puntos.</div>
                     </div>
-                    <div class="error" id="error-usuario-dni">Por favor, ingrese un Documento válido. Sin
-                        puntos.</div>
-                </div>
-
-                <!-- E-Mail -->
-
-                <div class="form-formulario" id="form-email">
-                    <label for="usuario-email" class="form-label">E-mail:</label>
-                    <div class="formulario-input">
-                        <input type="email" class="form-control" name="usuario-email" id="usuario-email"
-                            placeholder="mail@mail.com" required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+    
+                    <!-- E-Mail -->
+    
+                    <div class="form-formulario" id="form-email">
+                        <label for="usuario-email" class="form-label">E-mail:</label>
+                        <div class="formulario-input">
+                            <input type="email" class="form-control" name="usuario-email" id="usuario-email"
+                                placeholder="mail@mail.com" required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-usuario-email">Por favor, ingrese un correo electrónico
+                            válido.</div>
+    
                     </div>
-                    <div class="error" id="error-usuario-email">Por favor, ingrese un correo electrónico
-                        válido.</div>
-
-                </div>
-
-                <!-- Password -->
-                <div class="form-formulario" id="form-password">
-                    <label for="usuario-password" class="form-label">Contraseña:</label>
-                    <div class="formulario-input">
-                        <input type="password" class="form-control" name="usuario-password" id="usuario-password"
-                            required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+    
+                    <!-- Password -->
+                    <div class="form-formulario" id="form-password">
+                        <label for="usuario-password" class="form-label">Contraseña:</label>
+                        <div class="formulario-input">
+                            <input type="password" class="form-control" name="usuario-password" id="usuario-password"
+                                required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-usuario-password">La contraseña debe contener entre 4 y 12 dígitos
+                        </div>
                     </div>
-                    <div class="error" id="error-usuario-password">La contraseña debe contener entre 4 y 12 dígitos
+    
+                    <!-- Password Control -->
+                    <div class="form-formulario" id="form-password2">
+                        <label for="usuario-password2" class="form-label">Repetir Contraseña:</label>
+                        <div class="formulario-input">
+                            <input type="password" class="form-control" name="usuario-password2" id="usuario-password2"
+                                required>
+                            <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
+                                class="icono-svg formulario__validacion-estado"> -->
+                            <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="error" id="error-usuario-password2">Las contraseñas deben ser iguales.
+                        </div>
                     </div>
-                </div>
-
-                <!-- Password Control -->
-                <div class="form-formulario" id="form-password2">
-                    <label for="usuario-password2" class="form-label">Repetir Contraseña:</label>
-                    <div class="formulario-input">
-                        <input type="password" class="form-control" name="usuario-password2" id="usuario-password2"
-                            required>
-                        <!-- <img src="./statics/image/circle-xmark-regular.svg" alt="Error en el campo"
-                            class="icono-svg formulario__validacion-estado"> -->
-                        <i class="icono-svg form-validacion-estado fa-regular fa-circle-xmark"></i>
+    
+                    <!-- Perdil de usuario -->
+                    <div class="form-formulario" id="form-perfil">
+                        <label for="usuario-perfil" class="form-label">Perfil de Usuario:</label>
+                        <select name="usuario-perfil" id="usuario-perfil" class="form-control">
+                            <option value="Maestra/o">Maestra/o</option>
+                            <option value="Admin">Admin</option>
+                        </select>
                     </div>
-                    <div class="error" id="error-usuario-password2">Las contraseñas deben ser iguales.
+    
+                    <!-- Subir archivos -->
+                    <div class="form-formulario" id="form-archivo">
+                        <label for="usuario-archivo" class="form-label">Subir Foto:</label>
+                        <div class="formulario-input">
+                            <input type="file" class="form-control" name="usuario-archivo" id="usuario-archivo" required>
+                        </div>
+                        <div class="error" id="error-archivo-usuario-archivo">Por favor, seleccione un archivo válido.</div>
                     </div>
-                </div>
-
-                <!-- Perfil de usuario -->
-                <div class="form-formulario" id="form-perfil">
-                    <label for="usuario-perfil" class="form-label">Perfil de Usuario:</label>
-                    <select name="usuario-perfil" id="usuario-perfil" class="form-control">
-                        <option value="form-select">Maestra/o</option>
-                        <option value="form-select">Admin</option>
-                    </select>
-                </div>
-
-                <!-- Subir archivos -->
-                <div class="form-formulario validacion-reset" id="form-upload-usuario">
-                    <label for="archivo-upload-usuario" class="form-label">Subir Foto:</label>
-                    <div class="formulario-input">
-                        <input type="file" class="form-control" name="archivo-upload-usuario" id="archivo-upload-usuario" required>
+    
+                    <!-- Muestro formulario correcto  -->
+                    <div class="form-valido-campo" id="form-valido-campo">
+                        <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inptus
+                        </p>
                     </div>
-                    <div class="error" id="error-archivo-upload-usuario">Por favor, seleccione un archivo válido.</div>
-                </div>
-
-                <!-- Muestro formulario correcto  -->
-                <div class="form-valido-campo" id="form-valido-campo">
-                    <p class="form-mensaje-valido" id="form-mensaje-valido">Se cambia en el script check_inptus
-                    </p>
-                </div>
-
-
-                <!-- Enviar y Borrar Datos-->
-                <div class="form-btn-envia">
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Alta Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Modificación
-                        Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Baja Usuario</button>
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Consulta Usuario</button>
-                    <button type="reset" class="form-btn btn btn-secundario">Reset Datos</button>
-                </div>
-
-            </fieldset>
-
-        </form>
+    
+    
+                    <!-- Enviar y Borrar Datos-->
+                    <div class="form-btn-envia">
+                        <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Modificación de Usuario</button>
+                        <button type="reset" class="form-btn btn btn-secundario" onclick="resetFormulario()">Reset Datos</button>
+                    </div>
+    
+                </fieldset>
+    
+            </form>
+            </div>
+          </div>
+       
     </main>
 
-    <script src="../static/js/validaciones_gestion_usuario.js"></script>
+    
 
     <footer class="footer"></footer>
     <script src="./../static/js/header-plataforma.js"></script>
     <script src="./../static/js/footer.js"></script>
+    <script src="./../static/js/lista-usuarios.js"></script>
+    <script src="./../static/js/validaciones_gestion_usuario.js"></script>
 </body>
 
 </html>
