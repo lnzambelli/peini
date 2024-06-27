@@ -24,9 +24,9 @@ app = Flask(__name__)
 # lo cual es necesario en muchos casos, como cuando se desarrolla una API que necesita ser consumida desde diferentes dominios.
 CORS(app)
 
-@app.route('/')
-def index():
-    return 'Hola, mundo! Esta es mi primera aplicación Flask en PythonAnywhere.'
+# @app.route('/')
+# def index():
+#     return 'Hola, mundo! Esta es mi primera aplicación Flask en PythonAnywhere.'
 
 # -------------------------------------------------------------------
 # Definimos la clase Peini
@@ -274,6 +274,11 @@ def eliminar_usuario(dni):
 # Configurar y ejecutar la aplicación Flask
 # -------------------------------------------------------------------
 if __name__ == '__main__':
+    
+    peini.crear_tabla_perfiles()
+    peini.insertar_perfiles()
+    peini.crear_tabla_usuarios()
+    peini.insertar_usuarios()
 
-     # Ejecutar la aplicación Flask
+    # Ejecutar la aplicación Flask
     app.run(debug=True)
