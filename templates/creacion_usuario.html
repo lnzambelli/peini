@@ -31,7 +31,7 @@
 
         <img src="./../static/img/inicio.png" alt="banner" style="height: auto; width: 100%;">
 
-        <form action="crud-usuarios.py" id="formulario-usuario">
+        <form id="formulario-usuario" enctype="multipart/form-data">
             <fieldset class="formulario" id="formulario">
                 <legend class="form-legend">Creción de Usuarios</legend>
 
@@ -126,8 +126,8 @@
                 <div class="form-formulario" id="form-perfil">
                     <label for="usuario-perfil" class="form-label">Perfil de Usuario:</label>
                     <select name="usuario-perfil" id="usuario-perfil" class="form-control">
-                        <option value="form-select">Maestra/o</option>
-                        <option value="form-select">Admin</option>
+                        <option value="2">Maestra/o</option>
+                        <option value="1">Admin</option>
                     </select>
                 </div>
 
@@ -149,9 +149,11 @@
 
                 <!-- Enviar y Borrar Datos-->
                 <div class="form-btn-envia">
-                    <button class="form-btn btn btn-primario" onclick="check_inputs(event)">Creación de Usuario</button>
-                    <button type="reset" class="form-btn btn btn-secundario" onclick="resetFormulario()">Reset Datos</button>
-                    <button class="form-btn btn btn-primario" onclick="location.href='gestion_usuario.html'">Gestión de Usuario</button>
+                    <button type="submit" class="form-btn btn btn-primario">Creación de Usuario</button>
+                    <button type="reset" class="form-btn btn btn-secundario" onclick="resetFormulario()">Reset
+                        Datos</button>
+                    <button class="form-btn btn btn-primario" onclick="location.href='gestion_usuario.html'">Gestión de
+                        Usuario</button>
 
                 </div>
 
@@ -160,9 +162,9 @@
         </form>
     </main>
 
-    <script src="../static/js/validaciones_gestion_usuario.js"></script>
-
     <footer class="footer"></footer>
+    <script src="../static/js/validaciones_gestion_usuario.js"></script>
+    <script src="../static/js/creacion_usuario.js"></script>
     <script src="./../static/js/header-plataforma.js"></script>
     <script src="./../static/js/footer.js"></script>
 </body>

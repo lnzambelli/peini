@@ -85,7 +85,7 @@ function verificarSalaSeleccionada() {
 // Fin Funcion Sala
 
 
-// Funciones validacion Feha de nacimiento y upload configuro el campo en booleano //
+// Funciones validacion Feha de nacimiento y configuro el campo en booleano //
 document.addEventListener("DOMContentLoaded", function () {
 	// Tomos los elementos de fecha
 	var validoAlumnobirthday = document.getElementById("alumno-birthday");
@@ -118,16 +118,24 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 
-	// Lee los eventos y varifica que el elemento tenga cambios.
-	validoArchivoupload.addEventListener("change", function () {
-		// si no esta vacio completa el campo en true
-		if (this.value !== "") {
-			campos["archivo-upload"] = true;
-		}
-	});
-
 });
-// Fin Fecha y upload
+// Fin Fecha
+
+	// Lee los eventos y varifica que el elemento tenga cambios.
+
+	function validateFileUpload() {
+		var validoArchivoupload = document.getElementById("archivo-upload");
+		
+		validoArchivoupload.addEventListener("change", function () {
+			if (this.value !== "") {
+				campos["archivo-upload"] = true;
+				
+			} else {
+				campos["archivo-upload"] = false;
+				alert('Error al subir el archivo');
+			}
+		});
+	}
 
 // Funcion Verifico Turno //
 function verificarTurnoSeleccionado() {
@@ -346,6 +354,7 @@ const check_inputs = (e) => {
 	// Eejcuto Funciones de Verificar sala y turno
 	verificarSalaSeleccionada();
 	verificarTurnoSeleccionado();
+	validateFileUpload();
 	// Fin 
 
 	console.log(control(campos))
