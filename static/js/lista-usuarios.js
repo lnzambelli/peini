@@ -1,14 +1,15 @@
 
 let listUsuarios = []; // variable global
 
-const URL = "http://127.0.0.1:5000/"
+// const URL = "http://127.0.0.1:5000/"
 
 // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-//const URL = "https://USUARIO.pythonanywhere.com/"
+const URL = "https://CaC2024PEINI.pythonanywhere.com/"
 
 
-// Realizamos la solicitud GET al servidor para obtener todos los productos.
-fetch(URL + 'gestion_usuario')
+function listarUsuarios(){
+   // Realizamos la solicitud GET al servidor para obtener todos los usuarios.
+    fetch(URL + 'usuarios')
   .then(function (response) {
     if (response.ok) {
       //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
@@ -21,46 +22,50 @@ fetch(URL + 'gestion_usuario')
 
   //Esta función maneja los datos convertidos del JSON.
   .then(function (data) {
-    let tablaUsuarios = document.getElementById('tablaUsuarios'); //Selecciona el elemento del DOM donde se mostrarán los productos.
+    let tablaUsuarios = document.getElementById('tablaUsuarios'); //Selecciona el elemento del DOM donde se mostrarán los Usuarios.
     listUsuarios = data
-    /// Iteramos sobre cada producto y agregamos filas a la tabla
+    /// Iteramos sobre cada usuario y agregamos filas a la tabla
     for (let usuarios of data) {
-      let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada producto.
+      let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada usuario.
       fila.innerHTML = // Mostrar miniatura de la imagen
-        '<td><img src=../static/img/' + usuarios.fotografia + ' alt="Imagen del producto" style="width: 80px;"></td>' +
+        '<td><img src=https://www.pythonanywhere.com/user/CaC2024PEINI/files/home/CaC2024PEINI/mysite/static/img/' + usuarios.imagen + ' alt="Imagen del Usuario" style="width: 80px;"></td>' +
         '<td>' + usuarios.firstname + '</td>' +
         '<td>' + usuarios.lastname + '</td>' +
         '<td>' + usuarios.dni + '</td>' +
         '<td>' + usuarios.email + '</td>' +
         '<td>' + usuarios.perfil + '</td>' +
-        '<td>' + '<i class="fas fa-edit actions" onclick="openEditForm(' + usuarios.dni + ')"></i>'
-        + '<i class="fas fa-trash actions" onclick="eliminarUsuario(' + usuarios.dni + ')"></i>'
-      '</td>';
-      //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
-      //'<td><img src=https://www.pythonanywhere.com/user/USUARIO/files/home/USUARIO/mysite/static/imagenes/' + producto.imagen_url +' alt="Imagen del producto" style="width: 100px;"></td>' + '<td align="right">' + producto.proveedor + '</td>';
+        '<td>' +
+        '<i class="fas fa-edit actions" onclick="openEditForm(' + usuarios.dni + ')"></i>' +
+        '&nbsp;&nbsp;&nbsp;&nbsp;' +  // Aquí agregamos cuatro espacios
+         '<i class="fas fa-trash actions" onclick="eliminarUsuario(' + usuarios.dni + ')"></i>' +
+        '</td>';
 
-      //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
+
+      //Una vez que se crea la fila con el contenido del usuario, se agrega a la tabla utilizando el método appendChild del elemento tablaUsuarios.
       tablaUsuarios.appendChild(fila);
     }
 
   })
 
-  //Captura y maneja errores, mostrando una alerta en caso de error al obtener los productos.
+  //Captura y maneja errores, mostrando una alerta en caso de error al obtener los Usuarios.
   .catch(function (error) {
     // Código para manejar errores
-    alert('Error al obtener los productos.');
+    alert('Error al obtener los Usuarios.');
   });
+}
 
+listarUsuarios();
 
-// Se utiliza para eliminar un producto.
+// Se utiliza para eliminar un Usuario.
 function eliminarUsuario(dni) {
-  // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'productos/${codigo}', {method: 'DELETE' }).
-  if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
-    fetch(URL + `gestion_usuario/${dni}`, { method: 'DELETE' })
+  // Se muestra un diálogo de confirmación. Si el usuario confirma, se realiza una solicitud DELETE al servidor a través de fetch(URL + 'usuarios/${dni}', {method: 'DELETE' }).
+  if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
+    fetch(URL + `usuarios/${dni}`, { method: 'DELETE' })
       .then(response => {
         if (response.ok) {
-          // Si es exitosa (response.ok), elimina el producto y da mensaje de ok.
+          // Si es exitosa (response.ok), elimina el usuario y da mensaje de ok.
           alert('Usuario eliminado correctamente.');
+          window.location.reload()
         }
       })
       // En caso de error, mostramos una alerta con un mensaje de error.
@@ -75,15 +80,17 @@ function createRow(usuarios) {
   const tr = document.createElement('tr');
 
   tr.innerHTML =
-    '<td><img src=../static/img/' + usuarios.fotografia + ' alt="Imagen del producto" style="width: 80px;"></td>' +
+    '<td><img src=https://www.pythonanywhere.com/user/CaC2024PEINI/files/home/CaC2024PEINI/mysite/static/img/' + usuarios.imagen + ' alt="Imagen del usuario" style="width: 50px;height: 50px"></td>' +
     '<td>' + usuarios.firstname + '</td>' +
     '<td>' + usuarios.lastname + '</td>' +
     '<td>' + usuarios.dni + '</td>' +
     '<td>' + usuarios.email + '</td>' +
     '<td>' + usuarios.perfil + '</td>' +
-    '<td>' + '<i class="fas fa-edit actions" onclick="openEditForm(' + usuarios.dni + ')"></i>'
-    + '<i class="fas fa-trash actions" onclick="eliminarUsuario(' + usuarios.dni + ')"></i>'
-    + ' </td>';
+    '<td>' +
+        '<i class="fas fa-edit actions" onclick="openEditForm(' + usuarios.dni + ')"></i>' +
+        '&nbsp;&nbsp;&nbsp;&nbsp;' +  // Aquí agregamos cuatro espacios
+         '<i class="fas fa-trash actions" onclick="eliminarUsuario(' + usuarios.dni + ')"></i>' +
+    '</td>';
 
   return tr;
 }
@@ -96,6 +103,7 @@ function renderTable(data) {
     tbody.appendChild(createRow(usuarios));
   });
 }
+
 
 // Search functionality
 document.getElementById('searchInput')?.addEventListener('input', function () {
@@ -137,14 +145,14 @@ function openEditForm(dni) {
   const usuarios = listUsuarios.find(p => p.dni === dni);
   if (usuarios) {
     formTitle.textContent = '';
-    document.getElementById('usuario-archivo').src = usuarios.fotografia;
+    document.getElementById('usuario-archivo').src ='https://www.pythonanywhere.com/user/CaC2024PEINI/files/home/CaC2024PEINI/mysite/static/img/'+usuarios.imagen;
     document.getElementById('usuario-firstname').value = usuarios.firstname;
     document.getElementById('usuario-lastname').value = usuarios.lastname;
     document.getElementById('usuario-dni').value = usuarios.dni;
     document.getElementById('usuario-email').value = usuarios.email;
     document.getElementById('usuario-perfil').value = usuarios.id_usuario_perfil;
-    document.getElementById('usuario-password').value = usuarios.password
-    document.getElementById('usuario-password2').value = usuarios.password
+    document.getElementById('usuario-password').value = usuarios.clave;
+    document.getElementById('usuario-password2').value = usuarios.clave;
     editingUsuario = usuarios;
     modal.style.display = 'block';
   }
@@ -176,6 +184,7 @@ document.getElementById('formulario-usuario').addEventListener('submit', functio
   const fotografia = archivoElement.files[0]; // Asumiendo que es un archivo
 
 
+
   // Imprimir valores en la consola
   console.log("Nombre: ", nombre);
   console.log("Apellido: ", apellido);
@@ -184,7 +193,6 @@ document.getElementById('formulario-usuario').addEventListener('submit', functio
   console.log("Clave: ", clave);
   console.log("Perfil: ", perfil);
   console.log("Fotografía: ", fotografia);
-
 
   // Crear un nuevo objeto FormData
   const formData = new FormData();
@@ -198,7 +206,7 @@ document.getElementById('formulario-usuario').addEventListener('submit', functio
   formData.append('perfil', perfil);
   formData.append('archivo', fotografia);
 
-  fetch(URL + `gestion_usuario/${dni}`, { method: 'PUT', body: formData, })
+  fetch(URL + `usuarios/${dni}`, { method: 'PUT', body: formData, })
     .then(response => {
       if (response.ok) {
         return response.json()
@@ -208,7 +216,9 @@ document.getElementById('formulario-usuario').addEventListener('submit', functio
     })
     .then(data => {
       alert('Usuario actualizado correctamente.');
-      limpiarFormulario();
+      closeForm();
+      window.location.reload()
+
     })
     .catch(error => {
       console.error('Error:', error);
