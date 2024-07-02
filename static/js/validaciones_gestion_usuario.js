@@ -116,7 +116,7 @@ function resetFormulario() {
 
 		// Eliminar la clase 'error-activo' de los elementos hijos con clase 'error'
 		elemento.querySelectorAll('.error').forEach((errorElemento) => {
-			errorElemento.classList.remove('error-activo');
+			errorElemento.classList.remove('error-activo');giy
 			console.log('Clase "error-activo" eliminada de:', errorElemento);
 
 		});
