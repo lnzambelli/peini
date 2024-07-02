@@ -1,5 +1,5 @@
 # Instalar con pip install Flask
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 
 # Instalar con pip install flask-cors
 from flask_cors import CORS
@@ -63,18 +63,18 @@ class Peini:
         except mysql.connector.Error as err:
             self.conn.rollback()
             raise err
-    
+
     # Creamos la tabla de usuarios y establecemos la relación entre las tablas
         try:
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS usuarios (
                     id_usuario INT AUTO_INCREMENT,
-                    nombre VARCHAR(50) NOT NULL,
-                    apellido VARCHAR(50) NOT NULL,
+                    firstname VARCHAR(50) NOT NULL,
+                    lastname VARCHAR(50) NOT NULL,
                     dni INT UNSIGNED NOT NULL UNIQUE,
                     email VARCHAR(100) NOT NULL,
                     clave VARCHAR(255) NOT NULL,
-                    imagen_url VARCHAR(255),
+                    imagen VARCHAR(255),
                     id_usuario_perfil TINYINT UNSIGNED NOT NULL,
                     PRIMARY KEY (id_usuario),
                     FOREIGN KEY (id_usuario_perfil) REFERENCES perfiles(id_perfil)
@@ -85,65 +85,65 @@ class Peini:
             self.conn.rollback()
             raise err
 
-    # Insertar datos de ejemplo en la tabla de perfiles
-        try:
-            self.cursor.execute('''
-                INSERT IGNORE INTO perfiles (perfil)
-                VALUES 
-                    ('Admin'), ('Maestra/o');
-            ''')
-            self.conn.commit()
-        except mysql.connector.Error as err:
-            self.conn.rollback()
-            raise err
-        
-    # Insertar datos de ejemplo en la tabla de usuarios
-        try:
-            self.cursor.execute('''
-                INSERT IGNORE INTO usuarios (
-                    nombre,
-                    apellido,
-                    dni,
-                    email,
-                    clave,
-                    id_usuario_perfil,
-                    imagen_url
-                )
-                VALUES
-                    ('Juan', 'Pérez', 11111111, 'juan@example.com', 'password123', 1, NULL),
-                    ('María', 'González', 22222222, 'maria@example.com', 'securepwd', 2, NULL),
-                    ('Pedro', 'Sánchez', 33333333, 'pedro@example.com', '1234pass', 1, NULL),
-                    ('Ana', 'López', 44444444, 'ana@example.com', 'p@ssw0rd', 2, NULL),
-                    ('Lucía', 'Martínez', 55555555, 'lucia@example.com', 'mypassword', 1, NULL);
-            ''')
-            self.conn.commit()
-        except mysql.connector.Error as err:
-            self.conn.rollback()
-            raise err
-
     # Cerramos el cursos inicial y abrimos uno nuevo con el parámetro dictionary=true
         self.cursor.close()
         self.cursor = self.conn.cursor(dictionary=True) # Para obtener los resultados como diccionarios y facilitar la conversión a JSON
 
+    # Insertar datos de ejemplo en la tabla de perfiles
+    #    try:
+    #        self.cursor.execute('''
+    #            INSERT IGNORE INTO perfiles (perfil)
+    #            VALUES
+    #                ('Admin'), ('Maestra/o');
+    #        ''')
+    #        self.conn.commit()
+    #    except mysql.connector.Error as err:
+    #        self.conn.rollback()
+    #        raise err
+
+    # Insertar datos de ejemplo en la tabla de usuarios
+    #    try:
+    #        self.cursor.execute('''
+    #            INSERT IGNORE INTO usuarios (
+    #                firstname,
+    #                lastname,
+    #                dni,
+    #                email,
+    #                clave,
+    #                id_usuario_perfil,
+    #                imagen
+    #            )
+    #            VALUES
+    #                ('Juan', 'Pérez', 11111111, 'juan@example.com', 'password123', 1, NULL),
+    #                ('María', 'González', 22222222, 'maria@example.com', 'securepwd', 2, NULL),
+    #                ('Pedro', 'Sánchez', 33333333, 'pedro@example.com', '1234pass', 1, NULL),
+    #                ('Ana', 'López', 44444444, 'ana@example.com', 'p@ssw0rd', 2, NULL),
+    #                ('Lucía', 'Martínez', 55555555, 'lucia@example.com', 'mypassword', 1, NULL);
+    #        ''')
+    #        self.conn.commit()
+    #    except mysql.connector.Error as err:
+    #        self.conn.rollback()
+    #        raise err
+
     # -----------------------------------------#
     # Método para agregar un usuario a la base #
     # -----------------------------------------#
-    def agregar_usuario(self, nombre, apellido, dni, email, clave, id_usuario_perfil, imagen_url):
+    def agregar_usuario(self, firstname, lastname, dni, email, clave, imagen, id_usuario_perfil):
         sql = '''
         INSERT IGNORE INTO usuarios (
-            nombre,
-            apellido,
+            firstname,
+            lastname,
             dni,
             email,
             clave,
-            id_usuario_perfil,
-            imagen_url
+            imagen,
+            id_usuario_perfil
         )
         VALUES (
             %s, %s, %s, %s, %s, %s, %s
         )
         '''
-        valores = (nombre, apellido, dni, email, clave, id_usuario_perfil, imagen_url)
+        valores = (firstname, lastname, dni, email, clave, imagen, id_usuario_perfil)
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.lastrowid # Proporciona el valor de la clave primaria por la base de datos para la fila recién insertada.
@@ -156,12 +156,13 @@ class Peini:
             SELECT
                 usuarios.id_usuario,
                 usuarios.dni,
-                usuarios.nombre,
-                usuarios.apellido,
+                usuarios.firstname,
+                usuarios.lastname,
                 usuarios.email,
                 usuarios.clave,
-                usuarios.imagen_url,
-                perfiles.perfil AS id_usuario_perfil
+                usuarios.imagen,
+                usuarios.id_usuario_perfil,
+                perfiles.perfil
             FROM
                 usuarios
             JOIN
@@ -169,15 +170,15 @@ class Peini:
             WHERE
                 usuarios.dni = %s;
         ''', (dni,))
-        usuarios = self.cursor.fetchall() # fetchone devuelve un solo registro
-        return usuarios 
+        usuarios = self.cursor.fetchone() # fetchone devuelve un solo registro
+        return usuarios
 
     # -------------------------------------------------#
     # Método para modificar los detalles de un usuario #
     # -------------------------------------------------#
-    def modificar_usuario(self, id_usuario, nuevo_dni, nuevo_nombre, nuevo_apellido, nuevo_email, nuevo_clave, nuevo_id_usuario_perfil, nuevo_imagen_url):
-        sql = "UPDATE usuarios SET nombre = %s, apellido = %s, email = %s, clave = %s, id_usuario_perfil = %s, imagen_url = %s WHERE dni = %s"
-        valores = (nuevo_nombre, nuevo_apellido, nuevo_email, nuevo_clave, nuevo_id_usuario_perfil, nuevo_imagen_url, nuevo_dni, id_usuario)
+    def modificar_usuario(self, nuevo_nombre, nuevo_apellido, nuevo_email, nuevo_clave, nuevo_id_usuario_perfil, nuevo_imagen_url, nuevo_dni):
+        sql = "UPDATE usuarios SET firstname = %s, lastname = %s, email = %s, clave = %s, id_usuario_perfil = %s, imagen = %s WHERE dni = %s"
+        valores = (nuevo_nombre, nuevo_apellido, nuevo_email, nuevo_clave, nuevo_id_usuario_perfil, nuevo_imagen_url, nuevo_dni)
         self.cursor.execute(sql, valores)
         self.conn.commit()
         return self.cursor.rowcount > 0  # rowCount() devuelve el número de filas afectadas por la consulta
@@ -190,12 +191,13 @@ class Peini:
             SELECT
                 usuarios.id_usuario,
                 usuarios.dni,
-                usuarios.nombre,
-                usuarios.apellido,
+                usuarios.firstname,
+                usuarios.lastname,
                 usuarios.email,
                 usuarios.clave,
-                usuarios.imagen_url,
-                perfiles.perfil AS id_usuario_perfil
+                usuarios.imagen,
+                usuarios.id_usuario_perfil,
+                perfiles.perfil
             FROM
                 usuarios
             JOIN
@@ -216,7 +218,7 @@ class Peini:
         return self.cursor.rowcount > 0  # rowcount devuelve el número de filas afectadas por la consulta
 
 # --------------------#
-# Cuerpo del Programa #
+# CUERPO DEL PROGRAMA #
 # --------------------#
 peini = Peini(
     host='CaC2024PEINI.mysql.pythonanywhere-services.com',
@@ -252,19 +254,23 @@ def mostrar_usuario(dni):
 #-------------------------------#
 @app.route("/usuarios", methods=["POST"])
 def agregar_usuario():
-    nombre = request.form['nombre']
-    apellido = request.form['apellido']
-    dni = request.form['dni']
-    imagen_url = request.files['imagen_url']
-    email = request.form['email']
-    perfil = request.form['id_usuario_perfil']
-    nombre_imagen = secure_filename(imagen_url.filename)
+    nombre = request.form['firstname']
+    apellido = request.form['lastname']
+    documento = request.form['dni']
+    correo = request.form['email']
+    clave = request.form['password']
+    imagen = request.files['archivo']
+    perfil = request.form['perfil']
+    nombre_imagen=""
+
+    nombre_imagen = secure_filename(imagen.filename)
     nombre_base, extension = os.path.splitext(nombre_imagen)
     nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
-    nuevo_id_usuario = peini.agregar_usuario(nombre, apellido, dni, email, perfil, nombre_imagen)
+
+    nuevo_id_usuario = peini.agregar_usuario(nombre, apellido, documento, correo, clave, nombre_imagen, perfil)
     if nuevo_id_usuario:
-        imagen_url.save(os.path.join(RUTA_DESTINO, nombre_imagen))
-        return jsonify({"mensaje": "Usuario agregado correctamente.", "DNI": dni, "imagen_url": nombre_imagen}), 201
+        imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
+        return jsonify({"mensaje": "Usuario agregado correctamente.", "DNI": documento, "imagen": nombre_imagen}), 201
     else:
         return jsonify({"mensaje": "Error al agregar el usuario."}), 500
 
@@ -273,28 +279,32 @@ def agregar_usuario():
 #-----------------------------------#
 @app.route("/usuarios/<int:dni>", methods=["PUT"])
 def modificar_usuario(dni):
-    nuevo_nombre  = request.form.get("nombre")
-    nuevo_apellido = request.form.get("apellido")
+    nuevo_nombre = request.form.get("firstname")
+    nuevo_apellido = request.form.get("lastname")
     nuevo_dni = request.form.get("dni")
+    nuevo_clave = request.form.get("password")
     nuevo_email = request.form.get("email")
-    nuevo_perfil = request.form.get("id_usuario_perfil")
-    if 'imagen_url' in request.files:
-        imagen = request.files['imagen']
+    nuevo_perfil = request.form.get("perfil")
+
+    if 'archivo' in request.files:
+        imagen = request.files['archivo']
         nombre_imagen = secure_filename(imagen.filename)
         nombre_base, extension = os.path.splitext(nombre_imagen)
         nombre_imagen = f"{nombre_base}_{int(time.time())}{extension}"
         imagen.save(os.path.join(RUTA_DESTINO, nombre_imagen))
         usuario = peini.consultar_usuario(dni)
         if usuario:
-            imagen_vieja = usuario["imagen_url"]
+            imagen_vieja = usuario["imagen"]
             ruta_imagen = os.path.join(RUTA_DESTINO, imagen_vieja)
-            if os.path.exists(ruta_imagen):
+            if os.path.exists(ruta_imagen) and nombre_imagen != None:
                 os.remove(ruta_imagen)
+            else:
+                nombre_imagen = imagen_vieja
     else:
         usuario = peini.consultar_usuario(dni)
         if usuario:
-            nombre_imagen = usuario["imagen_url"]
-    if peini.modificar_usuario(nuevo_dni, nuevo_nombre, nuevo_apellido, nuevo_email, nombre_imagen, nuevo_perfil):
+            nombre_imagen = usuario["imagen"]
+    if peini.modificar_usuario(nuevo_nombre, nuevo_apellido, nuevo_email, nuevo_clave, nuevo_perfil, nombre_imagen, nuevo_dni):
         return jsonify({"mensaje": "Usuario modificado."}), 200
     else:
         return jsonify({"mensaje": "Usuario no encontrado."}), 403
@@ -304,9 +314,9 @@ def modificar_usuario(dni):
 #----------------------------------#
 @app.route("/usuarios/<int:dni>", methods=["DELETE"])
 def eliminar_usuario(dni):
-    usuario = peini.consultar_usuario(dni)
-    if usuario:
-        imagen_vieja = usuario["imagen_url"]
+    usuarios = peini.consultar_usuario(dni)
+    if usuarios:
+        imagen_vieja = usuarios["imagen"]
         ruta_imagen = os.path.join(RUTA_DESTINO, imagen_vieja)
         if os.path.exists(ruta_imagen):
             os.remove(ruta_imagen)
